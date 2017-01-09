@@ -1,0 +1,87 @@
+# Copyright (C) 1991-2008 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		TurboFMpro_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY MAX3000A
+set_global_assignment -name DEVICE "EPM3064ATC100-10"
+set_global_assignment -name TOP_LEVEL_ENTITY TurboFMpro
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "8.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:47:56  JANUARY 06, 2013"
+set_global_assignment -name LAST_QUARTUS_VERSION "8.0 SP1"
+set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "Design Compiler"
+set_global_assignment -name EDA_INPUT_VCC_NAME VDD -section_id eda_design_synthesis
+set_global_assignment -name EDA_LMF_FILE altsyn.lmf -section_id eda_design_synthesis
+set_global_assignment -name EDA_INPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_design_synthesis
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VERILOG -section_id eda_simulation
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_palace
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE TurboFMpro.vwf
+set_global_assignment -name END_TIME "10 us"
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 100
+set_global_assignment -name INCREMENTAL_COMPILATION OFF
+set_global_assignment -name VERILOG_FILE TurboFMpro.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE TurboFMpro.vwf
+set_global_assignment -name MAX7000_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_75 -to mode_enable_saa
+set_location_assignment PIN_71 -to mode_enable_ymfm
+set_location_assignment PIN_69 -to ayd[5]
+set_location_assignment PIN_68 -to ayd[6]
+set_location_assignment PIN_67 -to ayd[7]
+set_location_assignment PIN_64 -to aybc1
+set_location_assignment PIN_63 -to aybc2
+set_location_assignment PIN_61 -to aybdir
+set_location_assignment PIN_60 -to aya9_n
+set_location_assignment PIN_58 -to ayres_n
+set_location_assignment PIN_56 -to ayd[1]
+set_location_assignment PIN_54 -to ayd[2]
+set_location_assignment PIN_52 -to ayd[3]
+set_location_assignment PIN_48 -to ayd[0]
+set_location_assignment PIN_47 -to ayd[4]
+set_location_assignment PIN_46 -to aya8
+set_location_assignment PIN_87 -to fclk
+set_location_assignment PIN_42 -to d[7]
+set_location_assignment PIN_41 -to d[6]
+set_location_assignment PIN_40 -to d[5]
+set_location_assignment PIN_37 -to d[4]
+set_location_assignment PIN_36 -to d[3]
+set_location_assignment PIN_35 -to d[2]
+set_location_assignment PIN_32 -to d[1]
+set_location_assignment PIN_31 -to d[0]
+set_location_assignment PIN_25 -to ymclk
+set_location_assignment PIN_23 -to yma0
+set_location_assignment PIN_21 -to ymrd_n
+set_location_assignment PIN_20 -to ymwr_n
+set_location_assignment PIN_17 -to ymcs1_n
+set_location_assignment PIN_16 -to ymcs2_n
+set_location_assignment PIN_13 -to ymop1
+set_location_assignment PIN_12 -to ymop2
+set_location_assignment PIN_6 -to saaa0
+set_location_assignment PIN_8 -to saaclk
+set_location_assignment PIN_9 -to saacs_n
+set_location_assignment PIN_10 -to saawr_n
+set_location_assignment PIN_99 -to ymop1d
+set_location_assignment PIN_98 -to ymop2d
