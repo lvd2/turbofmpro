@@ -22,7 +22,7 @@ module TurboFMpro
 
 	// modes
 	input  wire        mode_enable_saa,   //0 - saa disabled (board equal TurboFM)
-	input  wire        mode_enable_ymfm,  //0 - single AY mode
+	input  wire        mode_enable_ymfm,  //0 - single AY mode (no two AY, no FM, no SAA)
 	
 	// control YM2203
 	output  wire       ymclk,   //3.5Mhz
@@ -44,28 +44,39 @@ module TurboFMpro
 
 ); 
 	reg  [3:0] conf;
-	reg  [2:0] ymcounter;
-	reg  [2:0] possaacounter;
-	reg  [2:0] negsaacounter;
+	reg  [2:0] ymcounter=3'd0;
+	reg  [2:0] possaacounter=3'd0;
+	reg  [2:0] negsaacounter=3'd0;
 	
 	wire confwr_n;
 	wire enable;
 	
-	assign confwr_n = ~(aybc2 & aybc1 & aybdir & ayd[7] & ayd[6] & ayd[5] & ayd[4] & (ayd[3]|(~mode_enable_saa)) & mode_enable_ymfm); 
+	//assign confwr_n = ~(aybc2 & aybc1 & aybdir & ayd[7] & ayd[6] & ayd[5] & ayd[4] & (ayd[3]|(~mode_enable_saa)) & mode_enable_ymfm); 
+	assign confwr_n = ~(aybc2 & aybc1 & aybdir & ayd[7] & ayd[6] & ayd[5] & ayd[4]);  // lvd
 
 	// configuration register set
 	// conf[0] - YM curchip select ( 0 - select D0, 1 - select D1 )
 	// conf[1] - YM stat reg select ( 1 - read register, 0 - read status )
 	// conf[2] - YM fm part disable ( 0 - enable, 1 - disable )
 	// conf[3] - SAA enable ( 0 - enable, 1 - disable )
-	always @ ( negedge ayres_n, negedge confwr_n )
+	
+	//always @ ( negedge ayres_n, negedge confwr_n )
+	always @ ( negedge ayres_n, posedge confwr_n ) // lvd
 	begin
 		if( !ayres_n ) 
 			//reset to default
 			conf <= 4'b1110;
 		else 
+		begin
 			//set register
-			conf <= ayd[3:0];
+			//conf <= ayd[3:0];
+			if( !mode_enable_ymfm )
+				conf <= 4'b1110;
+			else if( !mode_enable_saa )
+				conf <= {1'b1,ayd[2:0]};
+			else
+				conf <= ayd[3:0];
+		end
 	end
 
 	//  YM control functional

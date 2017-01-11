@@ -1,0 +1,4 @@
+#!/bin/bash
+
+vlog -vopt +acc -O5 -incr tb.v ../TurboFMpro.v
+
