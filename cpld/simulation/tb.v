@@ -41,7 +41,7 @@ module tb;
 	     saaa0;
 
 
-	wire [7:0] d; // internal YM/SAA bus
+	trireg [7:0] d; // internal YM/SAA bus
 
 
 	// cpu simulation
@@ -50,6 +50,15 @@ module tb;
 	wire [ 7:0] zdata;
 	reg  [ 7:0] zdout;
 	reg         zdena;
+
+
+	// ym test data
+	wire [7:0] ym_adr    [0:1];
+	wire [7:0] ym_wrdat  [0:1];
+	reg  [7:0] ym_rddat  [0:1];
+	reg  [7:0] ym_rdstat [0:1];
+
+
 
 
 	// 14MHz clock
@@ -70,7 +79,6 @@ module tb;
 
 
 
-
 	// reset
 	initial
 	begin
@@ -82,6 +90,10 @@ module tb;
 		repeat(5) @(posedge fclk);
 		rst_n <= 1'b1;
 	end
+
+
+
+
 
 	// zdata control
 	assign zdata = zdena ? zdout : 8'hZZ;
@@ -101,9 +113,43 @@ module tb;
 		.a9_n(aya9_n)
 	);
 
+	// saa accesses check
+	saa_checker saa_checker
+	(
+		.cs_n(saacs_n),
+		.wr_n(saawr_n),
+		.a0(saaa0),
+		.d(d)
+	);
 
+	// ym access checkers
+	ym_checker ym1
+	(
+		.cs_n(ymcs1_n),
+		.rd_n(ymrd_n),
+		.wr_n(ymwr_n),
+		.a0  (yma0),
+		.d   (d),
 
+		.rddat (ym_rddat [0]),
+		.rdstat(ym_rdstat[0]),
+		.adr   (ym_adr   [0]),
+		.wrdat (ym_wrdat [0])
+	);
+	//	
+	ym_checker ym2
+	(
+		.cs_n(ymcs2_n),
+		.rd_n(ymrd_n),
+		.wr_n(ymwr_n),
+		.a0  (yma0),
+		.d   (d),
 
+		.rddat (ym_rddat [1]),
+		.rdstat(ym_rdstat[1]),
+		.adr   (ym_adr   [1]),
+		.wrdat (ym_wrdat [1])
+	);
 
 
 
@@ -161,6 +207,25 @@ module tb;
 		repeat(5) @(posedge zclk);
 
 		wr_num(8'hF7);
+		test_saa_write();
+
+		wr_num(8'hfe);
+		test_ym_write(0);
+		test_ym_read(0,1);
+
+		wr_num(8'hfc);
+		test_ym_write(0);
+		test_ym_read(0,0);
+
+
+		wr_num(8'hff);
+		test_ym_write(1);
+		test_ym_read(1,1);
+
+		wr_num(8'hfd);
+		test_ym_write(1);
+		test_ym_read(1,0);
+
 	end
 
 
@@ -184,6 +249,70 @@ module tb;
 
 
 
+////////////////////////////////////////////////////////////////////////////////
+
+	// tasks for saa testing
+	task test_saa_write;
+		reg [7:0] adr;
+		reg [7:0] dat;
+	begin
+
+		adr = $random();
+		dat = $random();
+
+		wr_num(adr);
+		wr_dat(dat);
+
+		#(1);
+
+		if( adr!==saa_checker.adr )
+		begin
+			$display("test_saa_write: address write failed!");
+			$stop;
+		end
+
+		if( dat!==saa_checker.dat )
+		begin
+			$display("test_saa_write: data write failed!");
+			$stop;
+		end
+	end
+	endtask
+
+	// tasks for ym testing
+	task test_ym_write;
+		input integer ymnum;
+	begin : test_ym_write
+		reg [7:0] adr, dat;
+		adr = $random();
+		dat = $random();
+
+		wr_num(adr);
+		wr_dat(dat);
+
+		#(1.0);
+
+		if( adr!==ym_adr[ymnum] )
+		begin
+			$display("test_ym_write: chip %d, address write failed!",ymnum);
+			$stop;
+		end
+
+		if( dat!==ym_wrdat[ymnum] )
+		begin
+			$display("test_ym_write: chip %d, data write failed!",ymnum);
+			$stop;
+		end
+	end
+	endtask
+
+	task test_ym_read;
+		input integer ymnum;
+		input integer addr;
+	begin
+	end
+	endtask
+
 
 
 	// tasks for bffd/fffd port control
@@ -204,7 +333,6 @@ module tb;
 
 
 	// tasks for z80 bus model (simplified)
-
 	task iord;
 
 		input [15:0] addr;
@@ -324,6 +452,61 @@ module ay_access
 
 	assign bdir = bdir_r;
 	assign bc1  = bc1_r;
+
+endmodule
+
+
+
+module saa_checker
+(
+	input  wire cs_n,
+	input  wire wr_n,
+	input  wire a0,
+	input  wire [7:0] d
+);
+	reg [7:0] adr;
+	reg [7:0] dat;
+
+	reg int_a0;
+
+	always @(a0) int_a0 = #(0.1) a0;
+
+	wire stb_n = cs_n | wr_n;
+
+	always @(posedge stb_n)
+	begin
+		if( int_a0==0 ) dat <= d;
+		if( int_a0==1 ) adr <= d;
+	end
+endmodule
+
+module ym_checker
+(
+	input  wire cs_n,
+	input  wire rd_n,
+	input  wire wr_n,
+	input  wire a0,
+	inout  wire [7:0] d,
+
+	input  wire [7:0] rddat,
+	input  wire [7:0] rdstat,
+	output reg  [7:0] adr,
+	output reg  [7:0] wrdat
+);
+
+	reg int_a0;
+
+	wire wr_stb_n = cs_n | wr_n;
+
+	always @(a0) int_a0 = #(0.1) a0;
+
+	always @(posedge wr_stb_n)
+	begin
+		if( int_a0==1'b0 ) adr <= d;
+		if( int_a0==1'b1 ) wrdat <= d;
+	end
+
+	assign d = (cs_n|rd_n) ? 8'hZZ : (int_a0 ? rddat : rdstat);
 
 endmodule
 

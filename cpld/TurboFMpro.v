@@ -42,11 +42,14 @@ module TurboFMpro
 	output  wire       saawr_n, //chip write
 	output  wire       saaa0 //register/adress select
 
-); 
+);
+
+
 	reg  [3:0] conf;
 	reg  [2:0] ymcounter=3'd0;
 	reg  [2:0] possaacounter=3'd0;
-	reg  [2:0] negsaacounter=3'd0;
+	//reg  [2:0] negsaacounter=3'd0; //lvd
+	reg negpulse; //lvd
 	
 	wire confwr_n;
 	wire enable;
@@ -123,7 +126,13 @@ module TurboFMpro
 	// saaclk = 28Mhz/3.5 = 8Mhz
 	always @ ( posedge fclk )
 	begin
-		if( negsaacounter == 3 )
+		if( possaacounter[2:1] == 2'b11 ) // ==6
+			possaacounter <= 3'd0;
+		else
+			possaacounter <= possaacounter + 3'd1;
+		// counter optimized by lvd
+
+/*		if( negsaacounter == 3 )
 		begin
 			possaacounter <= 3'b000;
 		end
@@ -136,10 +145,14 @@ module TurboFMpro
 		begin
 			possaacounter <= possaacounter+3'b001;
 		end
+*/
 	end
 	always @ ( negedge fclk )
 	begin
-		if( possaacounter == 3 )
+		negpulse <= possaacounter[2] & (possaacounter[1]|possaacounter[0]); //==5,6
+
+	// counter removed by lvd
+/*		if( possaacounter == 3 )
 		begin
 			negsaacounter <= 3'b000;
 		end
@@ -148,8 +161,9 @@ module TurboFMpro
 		begin
 			negsaacounter <= negsaacounter+3'b001;
 		end
+*/
 	end
-	assign saaclk = (possaacounter[1]|negsaacounter[1]) & (~conf[3]) & mode_enable_saa & mode_enable_ymfm;	//disable clock if saa disabled
+	assign saaclk = (possaacounter[1]|negpulse) & (~conf[3]) & mode_enable_saa & mode_enable_ymfm;	//disable clock if saa disabled
 	
 	// for CS used only static signals
 	assign saacs_n = ~( confwr_n & aya8 & (~aya9_n) & (~conf[3]) & mode_enable_saa & mode_enable_ymfm );

@@ -15,8 +15,8 @@ add wave -noupdate /tb/DUT/enable
 add wave -noupdate /tb/DUT/fclk
 add wave -noupdate /tb/DUT/mode_enable_saa
 add wave -noupdate /tb/DUT/mode_enable_ymfm
-add wave -noupdate -radix hexadecimal /tb/DUT/negsaacounter
 add wave -noupdate -radix hexadecimal /tb/DUT/possaacounter
+add wave -noupdate /tb/DUT/negpulse
 add wave -noupdate /tb/DUT/saaa0
 add wave -noupdate /tb/DUT/saaclk
 add wave -noupdate /tb/DUT/saacs_n
@@ -67,8 +67,41 @@ add wave -noupdate /tb/ymop2
 add wave -noupdate /tb/ymop2d
 add wave -noupdate /tb/ymrd_n
 add wave -noupdate /tb/ymwr_n
+add wave -noupdate -divider {New Divider}
+add wave -noupdate /tb/saa_checker/a0
+add wave -noupdate /tb/saa_checker/int_a0
+add wave -noupdate /tb/saa_checker/cs_n
+add wave -noupdate /tb/saa_checker/wr_n
+add wave -noupdate /tb/saa_checker/stb_n
+add wave -noupdate -radix hexadecimal /tb/saa_checker/d
+add wave -noupdate -radix hexadecimal /tb/saa_checker/adr
+add wave -noupdate -radix hexadecimal /tb/saa_checker/dat
+add wave -noupdate -divider {{New Divider}}
+add wave -noupdate /tb/ym1/cs_n
+add wave -noupdate /tb/ym1/rd_n
+add wave -noupdate /tb/ym1/wr_n
+add wave -noupdate /tb/ym1/a0
+add wave -noupdate -radix hexadecimal /tb/ym1/d
+add wave -noupdate -radix hexadecimal /tb/ym1/rddat
+add wave -noupdate -radix hexadecimal /tb/ym1/rdstat
+add wave -noupdate -radix hexadecimal /tb/ym1/adr
+add wave -noupdate -radix hexadecimal /tb/ym1/wrdat
+add wave -noupdate /tb/ym1/int_a0
+add wave -noupdate /tb/ym1/wr_stb_n
+add wave -noupdate -divider {New Divider}
+add wave -noupdate /tb/ym2/cs_n
+add wave -noupdate /tb/ym2/rd_n
+add wave -noupdate /tb/ym2/wr_n
+add wave -noupdate /tb/ym2/a0
+add wave -noupdate -radix hexadecimal /tb/ym2/d
+add wave -noupdate -radix hexadecimal /tb/ym2/rddat
+add wave -noupdate -radix hexadecimal /tb/ym2/rdstat
+add wave -noupdate -radix hexadecimal /tb/ym2/adr
+add wave -noupdate -radix hexadecimal /tb/ym2/wrdat
+add wave -noupdate /tb/ym2/int_a0
+add wave -noupdate /tb/ym2/wr_stb_n
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {9660637 ps} 0} {{Cursor 2} {9732065 ps} 0}
+WaveRestoreCursors {{Cursor 1} {595000 ps} 0} {{Cursor 2} {9678494 ps} 0}
 configure wave -namecolwidth 242
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -83,4 +116,4 @@ configure wave -griddelta 10
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1312500 ps}
+WaveRestoreZoom {0 ps} {1396500 ps}
