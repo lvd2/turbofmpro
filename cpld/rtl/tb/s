@@ -1,0 +1,4 @@
+#!/bin/bash
+
+vsim -do "do wave.do" -gui -vopt +acc +notimingchecks work.tb
+

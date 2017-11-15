@@ -1,11 +1,11 @@
-// testbench for TurboFMpro.v
-// (c) NedoPC 2017
+// testbench for TurboFMpro rtl
+// (c) NedoPC 2018
 
 `timescale 1ns/1ps
 
 
 `define CLK14_HALFPERIOD (35.000) /* to make it more async */
-`define CLK28_HALFPERIOD (17.857)
+`define CLK56_HALFPERIOD (8.929)
 
 module tb;
 
@@ -74,7 +74,7 @@ module tb;
 	begin
 		fclk = 1'b0;
 
-		forever #(`CLK28_HALFPERIOD) fclk = ~fclk;
+		forever #(`CLK56_HALFPERIOD) fclk = ~fclk;
 	end
 
 
@@ -94,7 +94,7 @@ module tb;
 
 
 
-
+/*
 	// zdata control
 	assign zdata = zdena ? zdout : 8'hZZ;
 
@@ -150,13 +150,13 @@ module tb;
 		.adr   (ym_adr   [1]),
 		.wrdat (ym_wrdat [1])
 	);
-
+*/
 
 
 
 
 	// DUT connection
-	TurboFMpro DUT
+	top DUT
 	(
 		.fclk(fclk),
 		
@@ -199,7 +199,7 @@ module tb;
 
 
 
-
+/*
 	// test script
 	initial
 	begin
@@ -407,13 +407,14 @@ module tb;
 		end
 
 	endtask
-
+*/
 
 
 
 
 endmodule
 
+/*
 // bdir/bc1/bc2/a8/a9 decoder
 module ay_access
 (
@@ -510,4 +511,4 @@ module ym_checker
 	assign d = (cs_n|rd_n) ? 8'hZZ : (int_a0 ? rddat : rdstat);
 
 endmodule
-
+*/

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+	TESTBENCH="./tb.v"
+	FILES="../top.v"
+	FILES="${FILES} ../clocks.v"
+
+
+vlog -vopt +acc -O5 -incr $TESTBENCH $FILES
+
