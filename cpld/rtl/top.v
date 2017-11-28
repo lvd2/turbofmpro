@@ -45,9 +45,19 @@ module top
 	output  wire       saawr_n, //chip write
 	output  wire       saaa0 //register/adress select
 );
+	
+	wire wr_port; // write Fx config port strobe
 
-	wire saa_enabled = mode_enable_saa & mode_enable_ymfm;
 
+	// reset resync
+	reg [1:0] rst_n_r;
+	wire rst_n = rst_n_r[1];
+	//
+	always @(posedge fclk, negedge ayres_n)
+	if( !ayres_n )
+		rst_n_r[1:0] <= 2'b00;
+	else
+		rst_n_r[1:0] <= {rst_n_r[0], 1'b1};
 
 
 
@@ -62,6 +72,39 @@ module top
 		.ymclk (ymclk ),
 		.saaclk(saaclk)
 	);
+
+
+
+
+	// bus controller
+	bus bus
+	(
+		.clk(fclk),
+
+		.rst_n(rst_n),
+
+		.aybc1 (aybc1 ),
+		.aybc2 (aybc2 ),
+		.aybdir(aybdir),
+		.aya8  (aya8  ),
+		.aya9_n(aya9_n),
+
+		.ayd(ayd),
+		.d  (d  ),
+
+		.wr_port(wr_port),
+		
+		.yma0   (yma0   ),
+		.ymcs0_n(ymcs1_n),
+		.ymcs1_n(ymcs2_n),
+		.ymrd_n (ymrd_n ),
+		.ymwr_n (ymwr_n ),
+
+		.saaa0  (saaa0  ),
+		.saacs_n(saacs_n),
+		.saawr_n(saawr_n)
+	);
+
 
 
 
