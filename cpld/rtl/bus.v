@@ -77,7 +77,7 @@ module bus
 	// config inputs
 	input  wire ym_sel,  // 0 -- YM #0 selected, 1 -- YM #1
 	input  wire ym_stat, // 1 -- read YM status reg
-	input  wire saa_ena  // 1 -- saa enabled (instead of YM)
+	input  wire saa_sel  // 1 -- saa selected, 0 -- YM selected
 );
 
 	wire [2:0] decode_wraddr;
