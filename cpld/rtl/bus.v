@@ -58,7 +58,7 @@ module bus
 	inout  wire [7:0]  d,   // internal data bus (to ym2203/sa1099)
 
 	// write strobe for Fx config port
-	output reg  wr_port,
+	output wire wr_port,
 	
 	// strobes/addr for ym2203
 	output reg  yma0,
@@ -82,15 +82,18 @@ module bus
 
 	wire [2:0] decode_wraddr;
 
-	wire async_wraddr,
+	wire async_wrport,
+	     async_wraddr,
 	     async_wrdata,
 	     async_rddata;
 
-	wire [2:0] wraddr;
-	wire [2:0] wrdata;
-	wire [2:0] rddata;
+	reg  [2:0] wrport;
+	reg  [2:0] wraddr;
+	reg  [2:0] wrdata;
+	reg  [2:0] rddata;
 
-	reg wraddr_on,
+	reg wrport_on,
+	    wraddr_on,
 	    wrdata_on,
 	    rddata_on;
 
@@ -98,12 +101,18 @@ module bus
 	     wrdata_beg, wrdata_end,
 	     rddata_beg, rddata_end;
 
+	wire wrport_beg;
+
+
 	reg [7:0] write_latch;
 	reg [7:0] read_latch;
 
-
-
 	wire cfg_port;
+
+
+	reg [3:0] saa_ctr = 4'hF;
+
+	reg [4:0] ym_ctr  = 5'h1F;
 
 
 
@@ -130,22 +139,32 @@ module bus
 	assign decode_wraddr[3'b110] = 1'b0;
 	assign decode_wraddr[3'b111] = 1'b1;
 	//
-	assign async_wraddr = decode_wraddr[{aybdir,aybc2,aybc1}] && aya8 && !aya9_n;
-	assign async_wrdata =  aybdir &&  aybc2 && !aybc1          && aya8 && !aya9_n;
-	assign async_rddata = !aybdir &&  aybc2 &&  aybc1          && aya8 && !aya9_n;
+	assign async_wrport = decode_wraddr[{aybdir,aybc2,aybc1}] && aya8 && !aya9_n && ayd[7:4]==4'hF;
+	assign async_wraddr = decode_wraddr[{aybdir,aybc2,aybc1}] && aya8 && !aya9_n && ayd[7:4]!=4'hF;
+	assign async_wrdata =  aybdir &&  aybc2 && !aybc1         && aya8 && !aya9_n;
+	assign async_rddata = !aybdir &&  aybc2 &&  aybc1         && aya8 && !aya9_n;
 
 
 
 	// resync
 	always @(posedge clk)
 	begin
+		wrport[2:0] <= { wrport[1:0], async_wrport };
 		wraddr[2:0] <= { wraddr[1:0], async_wraddr };
 		wrdata[2:0] <= { wrdata[1:0], async_wrdata };
 		rddata[2:0] <= { rddata[1:0], async_rddata };
 	end
 
 	// filtering
-	always @(posedge clk, negedgre rst_n)
+	always @(posedge clk, negedge rst_n)
+	if( !rst_n )
+		wrport_on <= 1'b0;
+	else if( !wrport_on && wrport[2:1]==2'b11 )
+		wrport_on <= 1'b1;
+	else if(  wrport_on && wrport[2:1]==2'b00 )
+		wrport_in <= 1'b0;
+	//
+	always @(posedge clk, negedge rst_n)
 	if( !rst_n )
 		wraddr_on <= 1'b0;
 	else if( !wraddr_on && wraddr[2:1]==2'b11 )
@@ -153,7 +172,7 @@ module bus
 	else if(  wraddr_on && wraddr[2:1]==2'b00 )
 		wraddr_on <= 1'b0;
 	//
-	always @(posedge clk, negedgre rst_n)
+	always @(posedge clk, negedge rst_n)
 	if( !rst_n )
 		wrdata_on <= 1'b0;
 	else if( !wrdata_on && wrdata[2:1]==2'b11 )
@@ -161,7 +180,7 @@ module bus
 	else if(  wrdata_on && wrdata[2:1]==2'b00 )
 		wrdata_on <= 1'b0;
 	//
-	always @(posedge clk, negedgre rst_n)
+	always @(posedge clk, negedge rst_n)
 	if( !rst_n )
 		rddata_on <= 1'b0;
 	else if( !rddata_on && rddata[2:1]==2'b11 )
@@ -176,7 +195,8 @@ module bus
 	assign wrdata_end =  wrdata_on && wrdata[2:1]==2'b00;
 	assign rddata_beg = !rddata_on && rddata[2:1]==2'b11;
 	assign rddata_end =  rddata_on && rddata[2:1]==2'b00;
-
+	//
+	assign wrport_beg = !wrport_on && wrport[2:1]==2'b11;
 
 
 	// config port access (address Fx)
@@ -185,28 +205,85 @@ module bus
 
 
 
+	// saa control
 	always @(posedge clk)
-	if( cfg_port && wraddr_beg )
-		wr_port <= 1'b1;
-	else
-		wr_port <= 1'b0;
+	if( saa_sel && (wraddr_beg || wrdata_beg) )
+		saa_ctr <= 4'd0;
+	else if( !saa_ctr[3] )
+		saa_ctr <= saa_ctr + 4'd1;
+	//
+	always @(posedge clk)
+	if( wraddr_beg || wrdata_beg )
+		saaa0 <= wraddr_beg;
+	//
+	always @(posedge clk)
+	if( saa_sel && (wraddr_beg || wrdata_beg) )
+		saacs_n <= 1'b0;
+	else if( saa_ctr[4] )
+		saacs_n <= 1'b1;
+	//
+	always @(posedge clk)
+	if( saa_ctr[3] )
+		saawr_n <= 1'b1;
+	else if( saa_ctr[1] )
+		saawr_n <= 1'b0;
+
+
+
+
+
+	// ym control
+	always @(posedge clk)
+	if( !saa_sel && (wraddr_beg || wrdata_beg || rddata_beg) )
+		ym_ctr <= 5'd2;
+	else if( !ym_ctr[4] )
+		ym_ctr <= ym_ctr + 5'd1;
+	//
+	always @(posedge clk)
+	if( wraddr_beg || wrdata_beg || rddata_beg )
+		yma0 <= wrdata_beg || (rddata_beg && !ym_stat);
+	//
+	always @(posedge clk)
+	if( ym_ctr[4] )
+	begin
+		ymcs0_n <= 1'b1;
+		ymcs1_n <= 1'b1;
+		ymrd_n  <= 1'b1;
+		ymwr_n  <= 1'b1;
+	end
+	else if( ym_ctr[3:0]==4'd3 )
+	begin
+		ymcs0_n <=  ym_sel;
+		ymcs1_n <= !ym_sel;
+		//
+		ymrd_n  <= !rddata_on;
+		ymwr_n  <= !(wraddr_on || wrdata_on);
+	end
+
+
+	// config port write strobe
+	assign wr_port = wrport_beg;
 
 
 
 
 
 	// write latch
-	always @(posedge fclk)
+	always @(posedge clk)
 	if( wraddr_beg || wrdata_beg )
 		write_latch <= ayd;
 	
 	// read latch
 	always @*
-	if( ??? )
+	if( !ymrd_n )
 		read_latch = d;
 
 
 
+	// busses intercommutation
+	assign ayd = async_rddata ? read_latch : 8'hZZ;
+	//
+	assign d = (saawr_n || ymwr_n) ? write_latch : 8'hZZ;
 
 
 
