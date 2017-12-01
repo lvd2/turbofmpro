@@ -109,9 +109,9 @@ module bus
 
 
 
-	reg [3:0] saa_ctr = 4'hF;
+	reg [3:0] saa_ctr = 4'hF; // for simulation
 
-	reg [4:0] ym_ctr  = 5'h1F;
+	reg [3:0] ym_ctr  = 4'hF; // for simulation
 
 
 
@@ -226,23 +226,23 @@ module bus
 	// ym control
 	always @(posedge clk)
 	if( !saa_sel && (wraddr_beg || wrdata_beg || rddata_beg) )
-		ym_ctr <= 5'd2;
-	else if( !ym_ctr[4] )
-		ym_ctr <= ym_ctr + 5'd1;
+		ym_ctr[3:0] <= 4'd0;
+	else if( &ym_ctr[3:1] /*ym_ctr[3:0]<4'd14*/ )
+		ym_ctr[3:0] <= ym_ctr[3:0] + 4'd1;
 	//
 	always @(posedge clk)
 	if( wraddr_beg || wrdata_beg || rddata_beg )
 		yma0 <= wrdata_beg || (rddata_beg && !ym_stat);
 	//
 	always @(posedge clk)
-	if( ym_ctr[4] )
+	if( &ym_ctr[3:1] /*ym_ctr[3:0]==4'd14*/ )
 	begin
 		ymcs0_n <= 1'b1;
 		ymcs1_n <= 1'b1;
 		ymrd_n  <= 1'b1;
 		ymwr_n  <= 1'b1;
 	end
-	else if( ym_ctr[3:0]==4'd3 )
+	else if( !ym_ctr[3:0] ) // 1 clock after counter start
 	begin
 		ymcs0_n <=  ym_sel;
 		ymcs1_n <= !ym_sel;
