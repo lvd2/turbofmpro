@@ -24,8 +24,8 @@
 
 
 set_global_assignment -name FAMILY MAX3000A
-set_global_assignment -name DEVICE "EPM3064ATC100-10"
-set_global_assignment -name TOP_LEVEL_ENTITY TurboFMpro
+set_global_assignment -name DEVICE "EPM3128ATC100-10"
+set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "8.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:47:56  JANUARY 06, 2013"
 set_global_assignment -name LAST_QUARTUS_VERSION "7.2 SP3"
@@ -43,8 +43,6 @@ set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE TurboFMpro.vwf
 set_global_assignment -name END_TIME "10 us"
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 100
 set_global_assignment -name INCREMENTAL_COMPILATION OFF
-set_global_assignment -name VERILOG_FILE TurboFMpro.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE TurboFMpro.vwf
 set_global_assignment -name MAX7000_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_75 -to mode_enable_saa
 set_location_assignment PIN_71 -to mode_enable_ymfm
@@ -85,3 +83,16 @@ set_location_assignment PIN_9 -to saacs_n
 set_location_assignment PIN_10 -to saawr_n
 set_location_assignment PIN_99 -to ymop1d
 set_location_assignment PIN_98 -to ymop2d
+set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name VERILOG_FILE rtl/bus.v
+set_global_assignment -name VERILOG_FILE rtl/cfg.v
+set_global_assignment -name VERILOG_FILE rtl/clocks.v
+set_global_assignment -name VERILOG_FILE rtl/top.v
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name SLOW_SLEW_RATE ON
+set_global_assignment -name AUTO_TURBO_BIT OFF
+set_global_assignment -name SAVE_DISK_SPACE OFF
+set_global_assignment -name FLOW_ENABLE_RTL_VIEWER ON
+set_global_assignment -name FMAX_REQUIREMENT "56 MHz" -section_id fclk
+set_instance_assignment -name CLOCK_SETTINGS fclk -to fclk

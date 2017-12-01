@@ -36,7 +36,7 @@ module top
 	output  wire       yma0,
 	input   wire       ymop1, //dac data from first chip
 	input   wire       ymop2, //dac data from second chip
-	output  wire       ymop1d, //to fisrt dac
+	output  wire       ymop1d, //to first dac
 	output  wire       ymop2d, //to second dac
 
 	// control SAA
@@ -47,6 +47,13 @@ module top
 );
 	
 	wire wr_port; // write Fx config port strobe
+
+	// config signals
+	wire ym_sel;  // 0 -- YM #0 selected, 1 -- YM #1
+	wire ym_stat; // 1 -- read YM status reg
+	wire saa_sel; // 1 -- saa selected, 0 -- YM selected
+
+	wire fm_dac_ena;
 
 
 	// reset resync
@@ -102,8 +109,43 @@ module top
 
 		.saaa0  (saaa0  ),
 		.saacs_n(saacs_n),
-		.saawr_n(saawr_n)
+		.saawr_n(saawr_n),
+	
+		.ym_sel (ym_sel ),
+		.ym_stat(ym_stat),
+		.saa_sel(saa_sel)
 	);
+
+
+
+
+	// configurator
+	cfg cfg
+	(
+		.clk  (clk  ),
+		.rst_n(rst_n),
+
+		.d(ayd),
+
+		.wrstb(wr_port),
+
+		.mode_enable_saa (mode_enable_saa ),
+		.mode_enable_ymfm(mode_enable_ymfm),
+
+		.ym_sel (ym_sel ),
+		.ym_stat(ym_stat),
+		.saa_sel(saa_sel),
+
+		.fm_dac_ena(fm_dac_ena)
+	);
+
+
+
+
+	// FM dac enable
+	assign ymop1d = ymop1 & fm_dac_ena;
+	assign ymop2d = ymop2 & fm_dac_ena;
+
 
 
 

@@ -80,7 +80,7 @@ module bus
 	input  wire saa_sel  // 1 -- saa selected, 0 -- YM selected
 );
 
-	wire [2:0] decode_wraddr;
+	wire [7:0] decode_wraddr;
 
 	wire async_wrport,
 	     async_wraddr,
@@ -97,9 +97,9 @@ module bus
 	    wrdata_on,
 	    rddata_on;
 
-	wire wraddr_beg, wraddr_end,
-	     wrdata_beg, wrdata_end,
-	     rddata_beg, rddata_end;
+	wire wraddr_beg,
+	     wrdata_beg,
+	     rddata_beg;
 
 	wire wrport_beg;
 
@@ -162,7 +162,7 @@ module bus
 	else if( !wrport_on && wrport[2:1]==2'b11 )
 		wrport_on <= 1'b1;
 	else if(  wrport_on && wrport[2:1]==2'b00 )
-		wrport_in <= 1'b0;
+		wrport_on <= 1'b0;
 	//
 	always @(posedge clk, negedge rst_n)
 	if( !rst_n )
@@ -188,15 +188,11 @@ module bus
 	else if(  rddata_on && rddata[2:1]==2'b00 )
 		rddata_on <= 1'b0;
 
-	// start/stop strobes
-	assign wraddr_beg = !wraddr_on && wraddr[2:1]==2'b11;
-	assign wraddr_end =  wraddr_on && wraddr[2:1]==2'b00;
-	assign wrdata_beg = !wrdata_on && wrdata[2:1]==2'b11;
-	assign wrdata_end =  wrdata_on && wrdata[2:1]==2'b00;
-	assign rddata_beg = !rddata_on && rddata[2:1]==2'b11;
-	assign rddata_end =  rddata_on && rddata[2:1]==2'b00;
-	//
+	// start strobes
 	assign wrport_beg = !wrport_on && wrport[2:1]==2'b11;
+	assign wraddr_beg = !wraddr_on && wraddr[2:1]==2'b11;
+	assign wrdata_beg = !wrdata_on && wrdata[2:1]==2'b11;
+	assign rddata_beg = !rddata_on && rddata[2:1]==2'b11;
 
 
 	// config port access (address Fx)
@@ -219,7 +215,7 @@ module bus
 	always @(posedge clk)
 	if( saa_sel && (wraddr_beg || wrdata_beg) )
 		saacs_n <= 1'b0;
-	else if( saa_ctr[4] )
+	else if( saa_ctr[3] )
 		saacs_n <= 1'b1;
 	//
 	always @(posedge clk)
