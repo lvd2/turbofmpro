@@ -74,7 +74,7 @@ module top
 	(
 		.fclk(fclk),
 
-		.saa_enabled(saa_enabled),
+		.saa_enabled(mode_enable_saa),
 
 		.ymclk (ymclk ),
 		.saaclk(saaclk)

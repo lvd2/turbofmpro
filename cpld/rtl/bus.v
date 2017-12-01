@@ -107,7 +107,6 @@ module bus
 	reg [7:0] write_latch;
 	reg [7:0] read_latch;
 
-	wire cfg_port;
 
 
 	reg [3:0] saa_ctr = 4'hF;
@@ -193,10 +192,6 @@ module bus
 	assign wraddr_beg = !wraddr_on && wraddr[2:1]==2'b11;
 	assign wrdata_beg = !wrdata_on && wrdata[2:1]==2'b11;
 	assign rddata_beg = !rddata_on && rddata[2:1]==2'b11;
-
-
-	// config port access (address Fx)
-	assign cfg_port = ayd[7:4]==4'hF;
 
 
 

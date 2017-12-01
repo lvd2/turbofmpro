@@ -91,8 +91,9 @@ set_global_assignment -name VERILOG_FILE rtl/clocks.v
 set_global_assignment -name VERILOG_FILE rtl/top.v
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_global_assignment -name SLOW_SLEW_RATE ON
-set_global_assignment -name AUTO_TURBO_BIT OFF
+set_global_assignment -name AUTO_TURBO_BIT ON
 set_global_assignment -name SAVE_DISK_SPACE OFF
-set_global_assignment -name FLOW_ENABLE_RTL_VIEWER ON
+set_global_assignment -name FLOW_ENABLE_RTL_VIEWER OFF
 set_global_assignment -name FMAX_REQUIREMENT "56 MHz" -section_id fclk
 set_instance_assignment -name CLOCK_SETTINGS fclk -to fclk
+set_global_assignment -name MAX7000_OPTIMIZATION_TECHNIQUE AREA
