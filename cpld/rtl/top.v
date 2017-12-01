@@ -122,7 +122,7 @@ module top
 	// configurator
 	cfg cfg
 	(
-		.clk  (clk  ),
+		.clk  (fclk ),
 		.rst_n(rst_n),
 
 		.d(ayd),

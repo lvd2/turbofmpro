@@ -96,4 +96,5 @@ set_global_assignment -name SAVE_DISK_SPACE OFF
 set_global_assignment -name FLOW_ENABLE_RTL_VIEWER OFF
 set_global_assignment -name FMAX_REQUIREMENT "56 MHz" -section_id fclk
 set_instance_assignment -name CLOCK_SETTINGS fclk -to fclk
-set_global_assignment -name MAX7000_OPTIMIZATION_TECHNIQUE AREA
+set_global_assignment -name MAX7000_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name OPTIMIZE_IOC_REGISTER_PLACEMENT_FOR_TIMING ON
