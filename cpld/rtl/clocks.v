@@ -14,11 +14,12 @@ module clocks
 );
 
 	reg [3:0] ym_cnt;
-
 	reg [2:0] saa_cnt;
-	reg       pos_pulse;
-	reg       neg_pulse;
 
+	reg main_clk;
+
+	reg add_clk;
+	reg add_clk_neg;
 
 	// make ym clock (div by 16)
 	initial ym_cnt = 4'd0; // for simulation
@@ -42,19 +43,25 @@ module clocks
 	initial saa_cnt <= 3'd0;
 	//
 	always @(posedge fclk)
-	if( saa_cnt==3'd6 )
+////	if( saa_cnt==3'd6 )
+	if( saa_cnt[2:1]==2'b11 )
 		saa_cnt <= 3'd0;
 	else
 		saa_cnt <= saa_cnt + 3'd1;
-	//
-	//
+
+
+
 	always @(posedge fclk)
-		pos_pulse <= (~saa_cnt[2]) & saa_enabled;
-	//
-	always @(negedge fclk)
-		neg_pulse <= ~saa_cnt[2];
-	//
-	assign saaclk = pos_pulse & neg_pulse;
+		main_clk <= ~saa_cnt[2];
+ 
+	always @(posedge fclk)
+		add_clk <= !(saa_cnt==3'd3 || saa_cnt==3'd4);
+	always @*
+	if( !fclk )
+		add_clk_neg <= add_clk;
+
+
+	assign saaclk = main_clk & add_clk_neg;
 
 endmodule
 
