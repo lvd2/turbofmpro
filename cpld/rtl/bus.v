@@ -227,7 +227,7 @@ module bus
 	always @(posedge clk)
 	if( !saa_sel && (wraddr_beg || wrdata_beg || rddata_beg) )
 		ym_ctr[3:0] <= 4'd0;
-	else if( &ym_ctr[3:1] /*ym_ctr[3:0]<4'd14*/ )
+	else if( !(&ym_ctr[3:1]) /*ym_ctr[3:0]<4'd14*/ )
 		ym_ctr[3:0] <= ym_ctr[3:0] + 4'd1;
 	//
 	always @(posedge clk)
@@ -274,7 +274,7 @@ module bus
 	// busses intercommutation
 	assign ayd = async_rddata ? read_latch : 8'hZZ;
 	//
-	assign d = (saawr_n || ymwr_n) ? write_latch : 8'hZZ;
+	assign d = (!saawr_n || !ymwr_n) ? write_latch : 8'hZZ;
 
 
 

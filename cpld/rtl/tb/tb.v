@@ -41,7 +41,7 @@ module tb;
 	     saaa0;
 
 
-	trireg [7:0] d; // internal YM/SAA bus
+	wire [7:0] d; // internal YM/SAA bus
 
 
 	// cpu simulation
@@ -94,7 +94,7 @@ module tb;
 
 
 
-/*
+
 	// zdata control
 	assign zdata = zdena ? zdout : 8'hZZ;
 
@@ -150,7 +150,7 @@ module tb;
 		.adr   (ym_adr   [1]),
 		.wrdat (ym_wrdat [1])
 	);
-*/
+
 
 
 
@@ -199,7 +199,7 @@ module tb;
 
 
 
-/*
+
 	// test script
 	initial
 	begin
@@ -226,6 +226,9 @@ module tb;
 		test_ym_write(1);
 		test_ym_read(1,0);
 
+
+		$display("finished!");
+		$stop();
 	end
 
 
@@ -332,6 +335,9 @@ module tb;
 	endtask
 
 
+
+
+
 	// tasks for z80 bus model (simplified)
 	task iord;
 
@@ -407,14 +413,14 @@ module tb;
 		end
 
 	endtask
-*/
+
 
 
 
 
 endmodule
 
-/*
+
 // bdir/bc1/bc2/a8/a9 decoder
 module ay_access
 (
@@ -474,11 +480,13 @@ module saa_checker
 
 	wire stb_n = cs_n | wr_n;
 
-	always @(posedge stb_n)
+	always @(negedge stb_n)
 	begin
+		#0.2;
 		if( int_a0==0 ) dat <= d;
 		if( int_a0==1 ) adr <= d;
 	end
+
 endmodule
 
 module ym_checker
@@ -502,8 +510,9 @@ module ym_checker
 	initial int_a0 = a0;
 	always @(a0) int_a0 = #(0.1) a0;
 
-	always @(posedge wr_stb_n)
+	always @(negedge wr_stb_n)
 	begin
+		#0.2;
 		if( int_a0==1'b0 ) adr <= d;
 		if( int_a0==1'b1 ) wrdat <= d;
 	end
@@ -511,4 +520,4 @@ module ym_checker
 	assign d = (cs_n|rd_n) ? 8'hZZ : (int_a0 ? rddat : rdstat);
 
 endmodule
-*/
+

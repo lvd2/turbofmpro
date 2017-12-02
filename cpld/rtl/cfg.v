@@ -45,7 +45,7 @@ module cfg
 	
 	assign ym_stat = cfg_port[1] && mode_enable_ymfm && !cfg_port[2]; // no status reads are possible when fm disabled
 
-	assign saa_sel = cfg_port[3] && mode_enable_saa && mode_enable_ymfm;
+	assign saa_sel = !cfg_port[3] && mode_enable_saa && mode_enable_ymfm;
 
 
 	assign fm_dac_ena = mode_enable_ymfm && !cfg_port[2];
