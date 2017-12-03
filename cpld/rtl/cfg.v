@@ -43,7 +43,7 @@ module cfg
 	// make outputs
 	assign ym_sel = cfg_port[0] || !mode_enable_ymfm; // select #1 when 2ay/fm disabled
 	
-	assign ym_stat = cfg_port[1] && mode_enable_ymfm && !cfg_port[2]; // no status reads are possible when fm disabled
+	assign ym_stat = !cfg_port[1] && mode_enable_ymfm && !cfg_port[2]; // no status reads are possible when fm disabled
 
 	assign saa_sel = !cfg_port[3] && mode_enable_saa && mode_enable_ymfm;
 

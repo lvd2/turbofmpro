@@ -74,8 +74,24 @@ add wave -noupdate -height 15 /tb/DUT/bus/rddata_beg
 add wave -noupdate -height 15 /tb/DUT/bus/wrport_beg
 add wave -noupdate -height 15 -radix hexadecimal /tb/DUT/bus/write_latch
 add wave -noupdate -height 15 -radix hexadecimal /tb/DUT/bus/read_latch
+add wave -noupdate -divider {New Divider}
+add wave -noupdate -height 15 /tb/portcfg
+add wave -noupdate -height 15 /tb/mode_enable_saa
+add wave -noupdate -height 15 /tb/mode_enable_ymfm
+add wave -noupdate -divider {{New Divider}}
+add wave -noupdate -height 15 /tb/ym2/cs_n
+add wave -noupdate -height 15 /tb/ym2/rd_n
+add wave -noupdate -height 15 /tb/ym2/wr_n
+add wave -noupdate -height 15 /tb/ym2/a0
+add wave -noupdate -height 15 -radix hexadecimal /tb/ym2/d
+add wave -noupdate -height 15 -radix hexadecimal /tb/ym2/rddat
+add wave -noupdate -height 15 -radix hexadecimal /tb/ym2/rdstat
+add wave -noupdate -height 15 -radix hexadecimal /tb/ym2/adr
+add wave -noupdate -height 15 -radix hexadecimal /tb/ym2/wrdat
+add wave -noupdate -height 15 /tb/ym2/int_a0
+add wave -noupdate -height 15 /tb/ym2/wr_stb_n
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {41711 ps} 0}
+WaveRestoreCursors {{Cursor 1} {44730000 ps} 0}
 configure wave -namecolwidth 200
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -90,4 +106,4 @@ configure wave -griddelta 10
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {333680 ps}
+WaveRestoreZoom {0 ps} {1029 ns}

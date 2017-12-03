@@ -9,7 +9,18 @@
 
 module tb;
 
-	integer seed;
+
+	// board config
+	reg [3:0] portcfg = 4'hF;
+	// conf[0] - YM curchip select ( 0 - select D0, 1 - select D1, !!!1 after reset!!! )
+	// conf[1] - YM stat reg select ( 1 - read register, 0 - read status )
+	// conf[2] - YM fm part disable ( 0 - enable, 1 - disable )
+	// conf[3] - SAA enable ( 0 - enable, 1 - disable )
+	//
+	reg mode_enable_saa  = 1'b1, //0 - saa disabled (board equals to TurboFM)
+	    mode_enable_ymfm = 1'b1; //0 - single AY mode (no two AY, no FM, no SAA)
+
+
 
 	reg zclk, fclk;
 
@@ -21,8 +32,6 @@ module tb;
 	     aya8,
 	     aya9_n;
 
-	reg mode_enable_saa  = 1'b1,
-	    mode_enable_ymfm = 1'b1;
 
 	wire ymclk,
 	     ymcs1_n,
@@ -57,6 +66,12 @@ module tb;
 	wire [7:0] ym_wrdat  [0:1];
 	reg  [7:0] ym_rddat  [0:1];
 	reg  [7:0] ym_rdstat [0:1];
+
+
+
+
+	reg [7:0] ym_reg [0:1] = '{8'hFF,8'hFF}; 
+	reg [7:0] saa_reg = 8'hFF;
 
 
 
@@ -206,6 +221,26 @@ module tb;
 		wait(rst_n===1'b1);
 		repeat(5) @(posedge zclk);
 
+
+		wr_num(8'hFF); // initialization of regnum
+
+
+		forever
+		begin
+			do_rnd_test(1000);
+
+			repeat(5) @(posedge zclk);
+			mode_enable_ymfm = $random()>>31;
+			mode_enable_saa  = $random()>>31;
+			repeat(5) @(posedge zclk);
+		end
+
+
+	
+
+
+
+/*
 		wr_num(8'hF7);
 		test_saa_write();
 
@@ -217,7 +252,6 @@ module tb;
 		test_ym_write(0);
 		test_ym_read(0,0);
 
-
 		wr_num(8'hff);
 		test_ym_write(1);
 		test_ym_read(1,1);
@@ -226,13 +260,38 @@ module tb;
 		test_ym_write(1);
 		test_ym_read(1,0);
 
-
 		$display("finished!");
 		$stop();
+*/
 	end
 
 
 
+
+
+
+
+	task do_rnd_test;
+		input int iterations;
+
+		reg [7:0] rdt;
+
+		repeat(iterations)
+		begin
+
+			if( $random()>32'hF000_0000 )
+				wr_num( $random()>>24 );
+			else if( $random()>>31 )
+			begin
+				wr_dat( $random()>>24 );
+			end
+			else
+			begin
+				rd_dat();
+			end
+		end
+
+	endtask
 
 
 
@@ -254,85 +313,112 @@ module tb;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-	// tasks for saa testing
-	task test_saa_write;
-		reg [7:0] adr;
-		reg [7:0] dat;
-	begin
-
-		adr = $random();
-		dat = $random();
-
-		wr_num(adr);
-		wr_dat(dat);
-
-		#(1);
-
-		if( adr!==saa_checker.adr )
-		begin
-			$display("test_saa_write: address write failed!");
-			$stop;
-		end
-
-		if( dat!==saa_checker.dat )
-		begin
-			$display("test_saa_write: data write failed!");
-			$stop;
-		end
-	end
-	endtask
-
-	// tasks for ym testing
-	task test_ym_write;
-		input integer ymnum;
-	begin : test_ym_write
-		reg [7:0] adr, dat;
-		adr = $random();
-		dat = $random();
-
-		wr_num(adr);
-		wr_dat(dat);
-
-		#(1.0);
-
-		if( adr!==ym_adr[ymnum] )
-		begin
-			$display("test_ym_write: chip %d, address write failed!",ymnum);
-			$stop;
-		end
-
-		if( dat!==ym_wrdat[ymnum] )
-		begin
-			$display("test_ym_write: chip %d, data write failed!",ymnum);
-			$stop;
-		end
-	end
-	endtask
-
-	task test_ym_read;
-		input integer ymnum;
-		input integer addr;
-	begin
-	end
-	endtask
-
-
 
 	// tasks for bffd/fffd port control
 	task wr_num;
 		input [7:0] num;
 		iowr(16'hFFFD,num);
+
+		if( num>=8'hF0 )
+			portcfg = num[3:0];
+		else if( !portcfg[3] && mode_enable_saa && mode_enable_ymfm )
+			saa_reg = num;
+		else if( mode_enable_ymfm && !portcfg[0] )
+			ym_reg[0] = num;
+		else
+			ym_reg[1] = num;
 	endtask
+
+
+
 
 	task wr_dat;
 		input [7:0] dat;
+
+		int chipn;
+
+
 		iowr(16'hBFFD,dat);
+
+		// see whoch chip has been written
+		if( !portcfg[3] && mode_enable_saa && mode_enable_ymfm )
+		begin // check SAA write
+			if( saa_checker.adr!==saa_reg ||
+			    saa_checker.dat!==dat     )
+			begin
+				$display("%m: SAA write reg failed!");
+				$stop;
+			end
+		end
+		else
+		begin
+			chipn=1;
+			if( mode_enable_ymfm && !portcfg[0] ) chipn=0;
+
+			if( ym_adr  [chipn]!==ym_reg[chipn] ||
+			    ym_wrdat[chipn]!==dat           )
+			begin
+				$display("%m: YM %d write reg failed!",chipn);
+				$stop;
+			end
+		end
+
 	endtask
 
+
+
+
 	task rd_dat;
-		output [7:0] dat;
+
+		reg [7:0] dat;
+
+		int chipn;
+		int statr;
+
+		ym_rddat[0] = $random()>>24;
+		ym_rddat[1] = $random()>>24;
+		ym_rdstat[0] = $random()>>24;
+		ym_rdstat[1] = $random()>>24;
+
 		iord(16'hFFFD,dat);
+
+
+		if( !portcfg[3] && mode_enable_saa && mode_enable_ymfm )
+		begin
+			// nothing to do, can't read from SAA1099
+		end
+		else 
+		begin
+			chipn = 1;
+			statr = 0;
+		
+			if( !mode_enable_ymfm )
+			begin // single ay only
+				chipn=1;
+				statr=0;
+			end
+			else // mode_enable_ymfm==1
+			begin
+				chipn = portcfg[0];
+				statr = !portcfg[1] && !portcfg[2];
+			end
+
+			if( ym_adr[chipn]!==ym_reg[chipn] || dat!==(statr ? ym_rdstat[chipn] : ym_rddat[chipn]) )
+			begin
+				$display("%m: YM %d read reg failed!",chipn);
+				$stop;
+			end
+
+
+		end
+
 	endtask
+
+
+
+
+
+
 
 
 
@@ -418,7 +504,82 @@ module tb;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+	// tasks for saa testing
+	task test_saa_write;
+		reg [7:0] adr;
+		reg [7:0] dat;
+	begin
+
+		adr = $random();
+		dat = $random();
+
+		wr_num(adr);
+		wr_dat(dat);
+
+		#(1);
+
+		if( adr!==saa_checker.adr )
+		begin
+			$display("test_saa_write: address write failed!");
+			$stop;
+		end
+
+		if( dat!==saa_checker.dat )
+		begin
+			$display("test_saa_write: data write failed!");
+			$stop;
+		end
+	end
+	endtask
+
+	// tasks for ym testing
+	task test_ym_write;
+		input integer ymnum;
+	begin : test_ym_write
+		reg [7:0] adr, dat;
+		adr = $random();
+		dat = $random();
+
+		wr_num(adr);
+		wr_dat(dat);
+
+		#(1.0);
+
+		if( adr!==ym_adr[ymnum] )
+		begin
+			$display("test_ym_write: chip %d, address write failed!",ymnum);
+			$stop;
+		end
+
+		if( dat!==ym_wrdat[ymnum] )
+		begin
+			$display("test_ym_write: chip %d, data write failed!",ymnum);
+			$stop;
+		end
+	end
+	endtask
+
+	task test_ym_read;
+		input integer ymnum;
+		input integer addr;
+	begin
+	end
+	endtask
+
 endmodule
+
+
 
 
 // bdir/bc1/bc2/a8/a9 decoder
@@ -471,7 +632,7 @@ module saa_checker
 	input  wire a0,
 	input  wire [7:0] d
 );
-	reg [7:0] adr;
+	reg [7:0] adr = 8'hFF;
 	reg [7:0] dat;
 
 	reg int_a0;
@@ -499,9 +660,13 @@ module ym_checker
 
 	input  wire [7:0] rddat,
 	input  wire [7:0] rdstat,
-	output reg  [7:0] adr,
+	output wire [7:0] adr,
 	output reg  [7:0] wrdat
 );
+
+	reg [7:0] int_adr = 8'hFF;
+	assign adr=int_adr;
+
 
 	reg int_a0;
 
@@ -513,7 +678,7 @@ module ym_checker
 	always @(negedge wr_stb_n)
 	begin
 		#0.2;
-		if( int_a0==1'b0 ) adr <= d;
+		if( int_a0==1'b0 ) int_adr <= d;
 		if( int_a0==1'b1 ) wrdat <= d;
 	end
 

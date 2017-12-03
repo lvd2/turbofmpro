@@ -4,5 +4,5 @@
 	FILES="../top.v ../clocks.v ../bus.v ../cfg.v"
 
 
-vlog -vopt +acc -O5 -incr $TESTBENCH $FILES
+vlog -sv -vopt +acc -O5 -incr $TESTBENCH $FILES
 
