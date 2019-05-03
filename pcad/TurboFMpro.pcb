@@ -2,7 +2,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
 
 (asciiHeader 
   (asciiVersion 3 0)
-  (timeStamp 2019 5 3 21 39 21)
+  (timeStamp 2019 5 3 21 45 33)
   (program "P-CAD 2006 PCB" "19.02.9589")
   (copyright "Copyright © 1991-2006 Altium Limited")
   (fileAuthor "")
@@ -5710,7 +5710,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
     (line (pt 218.5 91.5) (pt 220.0 90.0) (width 0.2) (netNameRef "SAA_ENA") )
     (line (pt 219.75 107.5) (pt 218.0 105.75) (width 0.2) (netNameRef "YMFM_ENA") )
     (line (pt 220.75 107.75) (pt 219.25 106.25) (width 0.2) (netNameRef "GND") )
-    (text (pt 218.3 163.3) "AY CONNECTOR" (textStyleRef "Default2") (rotation 90.0) (justify Center) (extent 9.61231 1.7145) )
+    (text (pt 219.8 162.7) "AY CONNECTOR" (textStyleRef "Default2") (rotation 90.0) (justify Center) (extent 9.61231 1.7145) )
     (line (pt 226.5 90.75) (pt 225.75 91.5) (width 0.2) (netNameRef "GND") )
     (line (pt 225.75 91.5) (pt 223.5 91.5) (width 0.2) (netNameRef "GND") )
     (line (pt 226.06 121.92) (pt 226.25 122.0) (width 0.2) (netNameRef "AYIOA2") )
@@ -6608,7 +6608,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
     (line (pt 219.0 115.0) (pt 219.0 140.5) (width 0.2) (netNameRef "AYD6") )
     (line (pt 218.25 95.0) (pt 218.25 103.25) (width 0.2) (netNameRef "AYD6") )
     (line (pt 217.75 94.75) (pt 217.75 105.25) (width 0.2) (netNameRef "AYD5") )
-    (text (pt 218.7 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
+    (text (pt 217.8 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
     (line (pt 222.25 95.25) (pt 222.25 85.75) (width 0.2) (netNameRef "TCK") )
     (line (pt 241.25 127.0) (pt 241.25 121.75) (width 0.2) (netNameRef "B1") )
     (line (pt 276.86 167.64) (pt 276.86 154.94) (width 0.2) (netNameRef "AC2") )
@@ -6870,7 +6870,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
     (text (pt 284.5 110.5) "GND" (textStyleRef "Default2") (rotation 90.0) (justify Center) (extent 2.82575 1.7145) )
     (text (pt 283.9 119.1) "+5v" (textStyleRef "Default2") (rotation 90.0) (justify Center) (extent 2.74637 1.7145) )
     (text (pt 294.8 125.9) "EXT\r\nPORT" (textStyleRef "Default2") (rotation 90.0) (extent 3.46075 3.46075) )
-    (text (pt 218.3 163.3) "AY CONNECTOR" (textStyleRef "Default2") (rotation 90.0) (justify Center) (extent 9.61231 1.7145) )
+    (text (pt 219.8 162.7) "AY CONNECTOR" (textStyleRef "Default2") (rotation 90.0) (justify Center) (extent 9.61231 1.7145) )
     (text (pt 246.7 67.9) "IN" (textStyleRef "Default2") (extent 1.47637 1.7145) )
     (text (pt 284.5 115.7) "GND" (textStyleRef "Default2") (rotation 90.0) (justify Center) (extent 2.82575 1.7145) )
     (text (pt 218.7 131.4) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 90.0) (justify Center) (extent 23.19337 3.429) )
@@ -6881,7 +6881,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
     (text (pt 219.2 113.3) "SAA en" (textStyleRef "Default2") (justify Center) (extent 4.49262 1.7145) )
   )
   (layerContents (layerNumRef 7)
-    (text (pt 218.7 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
+    (text (pt 217.8 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
     (text (pt 289.6 81.9) "Turbo FM\r\n   PRO\r\n  rev.A" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 11.76337 10.0965) )
   )
   (layerContents (layerNumRef 12)
@@ -6893,7 +6893,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
         (pt 215.75 169.5) 
       )
     )
-    (text (pt 218.7 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
+    (text (pt 217.8 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
     (polyCutOut 
       (pcbPoly 
         (pt 280.0 107.3) 
@@ -15265,7 +15265,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
     )
   )
   (layerContents (layerNumRef 13)
-    (text (pt 218.7 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
+    (text (pt 217.8 157.5) "WWW.NEDOPC.COM" (textStyleRef "(Default)") (rotation 270.0) (isFlipped True) (justify Center) (extent 23.19337 3.429) )
     (polyCutOut 
       (pcbPoly 
         (pt 280.0 103.5) 
