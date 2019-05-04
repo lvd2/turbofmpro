@@ -2,7 +2,7 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
 
 (asciiHeader 
   (asciiVersion 3 0)
-  (timeStamp 2019 5 3 21 48 52)
+  (timeStamp 2019 5 4 9 19 32)
   (program "P-CAD 2006 PCB" "19.02.9589")
   (copyright "Copyright © 1991-2006 Altium Limited")
   (fileAuthor "")
@@ -3932,8 +3932,8 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
       (patternGraphicsRef 
         (patternGraphicsNameRef "Primary")
         (attr "Type" "CAPCHIP" (pt -3.429 1.905) (rotation 180.0) (isFlipped True) (textStyleRef "(Default)") )
-        (attr "RefDes" "C25" (pt 0.011 -1.8) (rotation 180.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
-        (attr "Value" "0.1mkF" (pt 0.011 -1.165) (rotation 180.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "RefDes" "C25" (pt 0.889 -2.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "Value" "0.1mkF" (pt 0.889 -2.635) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
       )
     )
     (via (viaStyleRef "(Default)") (pt 237.75 99.5) (netNameRef "VCPLD") )
@@ -4138,8 +4138,8 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
       (patternGraphicsRef 
         (patternGraphicsNameRef "Primary")
         (attr "Type" "CAPCHIP" (pt 3.429 -1.905) (isFlipped True) (textStyleRef "(Default)") )
-        (attr "RefDes" "C34" (pt -2.511 0.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
-        (attr "Value" "0.1mkF" (pt -2.511 -0.635) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "RefDes" "C34" (pt -2.611 0.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "Value" "0.1mkF" (pt -2.611 -0.635) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
       )
     )
     (via (viaStyleRef "(Default)") (pt 237.0 101.0) (netNameRef "~YMWR") )
@@ -4223,8 +4223,8 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
       (patternGraphicsRef 
         (patternGraphicsNameRef "Primary")
         (attr "Type" "CAPCHIP" (pt -3.429 1.905) (rotation 180.0) (isFlipped True) (textStyleRef "(Default)") )
-        (attr "RefDes" "C17" (pt -0.589 1.9) (rotation 180.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
-        (attr "Value" "20pF" (pt -0.589 2.535) (rotation 180.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "RefDes" "C17" (pt 0.789 2.1) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "Value" "20pF" (pt 0.789 1.465) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
       )
     )
     (via (viaStyleRef "(Default)") (pt 267.5 95.25) (netNameRef "GND") )
@@ -4383,8 +4383,8 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
       (patternGraphicsRef 
         (patternGraphicsNameRef "Primary")
         (attr "Type" "CAPCHIP" (pt -3.429 1.905) (rotation 180.0) (isFlipped True) (textStyleRef "(Default)") )
-        (attr "RefDes" "C35" (pt -2.511 0.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
-        (attr "Value" "0.1mkF" (pt -2.511 -0.635) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "RefDes" "C35" (pt -2.611 0.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "Value" "0.1mkF" (pt -2.611 -0.635) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
       )
     )
     (via (viaStyleRef "(Default)") (pt 243.25 129.75) (netNameRef "GND") )
@@ -4426,14 +4426,6 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
         (patternGraphicsNameRef "Primary")
         (attr "Type" "PLB1-4I" (pt 3.81 -3.81) (justify Center) (textStyleRef "(DefaultTTF)") )
         (attr "RefDes" "X5" (pt -0.4 1.4) (isVisible True) (justify LowerCenter) (textStyleRef "T:H91W10 [1]") )
-      )
-    )
-    (pattern (patternRef "C-CHIP_1") (refDesRef "C48") (pt 250.75 75.75) (rotation 180.0) (isFlipped True)(patternGraphicsNameRef "Primary")
-      (patternGraphicsRef 
-        (patternGraphicsNameRef "Primary")
-        (attr "Type" "CAPCHIP" (pt -3.429 1.905) (rotation 180.0) (isFlipped True) (textStyleRef "(Default)") )
-        (attr "RefDes" "C48" (pt -0.789 -2.0) (rotation 180.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
-        (attr "Value" "20pF" (pt -0.789 -1.365) (rotation 180.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
       )
     )
     (pattern (patternRef "R-CHIP_1") (refDesRef "R18") (pt 251.46 90.17) (rotation 90.0) (patternGraphicsNameRef "Primary")
@@ -4506,6 +4498,14 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
         (attr "Type" "RESCHIP" (pt -1.905 3.429) (rotation 270.0) (textStyleRef "(Default)") )
         (attr "RefDes" "R10" (pt -0.639 -3.05) (isVisible True) (textStyleRef "T:H91W10") )
         (attr "Value" "24K" (pt -0.639 -3.685) (isVisible True) (textStyleRef "T:H91W10") )
+      )
+    )
+    (pattern (patternRef "C-CHIP_1") (refDesRef "C48") (pt 250.75 75.75) (rotation 180.0) (isFlipped True)(patternGraphicsNameRef "Primary")
+      (patternGraphicsRef 
+        (patternGraphicsNameRef "Primary")
+        (attr "Type" "CAPCHIP" (pt -3.429 1.905) (rotation 180.0) (isFlipped True) (textStyleRef "(Default)") )
+        (attr "Value" "20pF" (pt 0.689 -2.635) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
+        (attr "RefDes" "C48" (pt 0.689 -2.0) (isFlipped True) (isVisible True) (textStyleRef "T:H91W10") )
       )
     )
     (pattern (patternRef "SOW16_1") (refDesRef "DA2") (pt 264.16 111.76) (patternGraphicsNameRef "Primary")
@@ -24009,12 +24009,22 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
     )
   )
   (drillSymSettings 
+    (drillSym Cross (holeDiam 0.4572))
+    (drillSym X (holeDiam 0.9))
+    (drillSym Y (holeDiam 0.9652))
+    (drillSym T (holeDiam 1.0))
+    (drillSym Hour (holeDiam 1.1))
+    (drillSym Side_Hour (holeDiam 1.5)(isHolePlated False))
+    (drillSym Box_Line (holeDiam 1.6))
+    (drillSym Diamond_Line (holeDiam 1.9))
+    (drillSym Box_V (holeDiam 2.54))
+    (drillSym Diamond_V (holeDiam 4.0))
   )
   (gerberSettings 
-    (units in)
+    (units mm)
     (numFormat gbr44)
     (autoDrawApertureSize 0.254)
-    (outputPath "Z:\\home\\lvd\\d\\turbofmpro\\pcad")
+    (outputPath "Z:\\home\\lvd\\d\\turbofmpro\\pcad\\gerbers")
     (viewLog False)
     (autoClear True)
     (g54Option False)
@@ -24023,6 +24033,1410 @@ ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro.pcb"
     (useApertureHoles False)
     (drawRotated True)
     (drawPolygons True)
+    (apertureDef 
+      (dCode 10)
+      (apertureShape Ellipse)
+      (width 0.254)
+      (height 0.254)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.254mm Y0.254mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 11)
+      (apertureShape Ellipse)
+      (width 0.381)
+      (height 0.381)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.381mm Y0.381mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 12)
+      (apertureShape Ellipse)
+      (width 0.5)
+      (height 0.5)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.500mm Y0.500mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 13)
+      (apertureShape Ellipse)
+      (width 0.1)
+      (height 0.1)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.100mm Y0.100mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 14)
+      (apertureShape Ellipse)
+      (width 1.0)
+      (height 1.0)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.000mm Y1.000mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 15)
+      (apertureShape Ellipse)
+      (width 0.127)
+      (height 0.127)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.127mm Y0.127mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 16)
+      (apertureShape Ellipse)
+      (width 0.15)
+      (height 0.15)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.150mm Y0.150mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 17)
+      (apertureShape Ellipse)
+      (width 0.2)
+      (height 0.2)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.200mm Y0.200mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 18)
+      (apertureShape Ellipse)
+      (width 0.25)
+      (height 0.25)
+      (holeDiam 0.0)
+      (desc "Ellipse X0.250mm Y0.250mm H0.000mm 0.0deg (0.000mm,0.000mm) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 19)
+      (apertureShape Ellipse)
+      (width 2.581)
+      (height 2.581)
+      (holeDiam 0.0)
+      (desc "Ellipse X2.581mm Y2.581mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 20)
+      (apertureShape Ellipse)
+      (width 2.8)
+      (height 2.8)
+      (holeDiam 0.0)
+      (desc "Ellipse X2.800mm Y2.800mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 21)
+      (apertureShape Ellipse)
+      (width 3.181)
+      (height 3.181)
+      (holeDiam 0.0)
+      (desc "Ellipse X3.181mm Y3.181mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 22)
+      (apertureShape Ellipse)
+      (width 1.5)
+      (height 1.5)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.500mm Y1.500mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 23)
+      (apertureShape Ellipse)
+      (width 1.524)
+      (height 1.524)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.524mm Y1.524mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 24)
+      (apertureShape Ellipse)
+      (width 1.6)
+      (height 1.6)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.600mm Y1.600mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 25)
+      (apertureShape Ellipse)
+      (width 1.7)
+      (height 1.7)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.700mm Y1.700mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 26)
+      (apertureShape Ellipse)
+      (width 1.75)
+      (height 1.75)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.750mm Y1.750mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 27)
+      (apertureShape Ellipse)
+      (width 1.881)
+      (height 1.881)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.881mm Y1.881mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 28)
+      (apertureShape Ellipse)
+      (width 1.905)
+      (height 1.905)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.905mm Y1.905mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 29)
+      (apertureShape Ellipse)
+      (width 1.981)
+      (height 1.981)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.981mm Y1.981mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 30)
+      (apertureShape Ellipse)
+      (width 2.081)
+      (height 2.081)
+      (holeDiam 0.0)
+      (desc "Ellipse X2.081mm Y2.081mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 31)
+      (apertureShape Ellipse)
+      (width 2.131)
+      (height 2.131)
+      (holeDiam 0.0)
+      (desc "Ellipse X2.131mm Y2.131mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 32)
+      (apertureShape Ellipse)
+      (width 2.2)
+      (height 2.2)
+      (holeDiam 0.0)
+      (desc "Ellipse X2.200mm Y2.200mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 33)
+      (apertureShape RndRect)
+      (width 2.8)
+      (height 7.0)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X2.800mm Y7.000mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 34)
+      (apertureShape RndRect)
+      (width 3.0)
+      (height 1.6)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X3.000mm Y1.600mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 35)
+      (apertureShape RndRect)
+      (width 3.181)
+      (height 7.381)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X3.181mm Y7.381mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 36)
+      (apertureShape RndRect)
+      (width 3.381)
+      (height 1.981)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X3.381mm Y1.981mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 37)
+      (apertureShape RndRect)
+      (width 6.2)
+      (height 5.8)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X6.200mm Y5.800mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 38)
+      (apertureShape RndRect)
+      (width 6.581)
+      (height 6.181)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X6.581mm Y6.181mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 39)
+      (apertureShape RndRect)
+      (width 0.635)
+      (height 1.27)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X0.635mm Y1.270mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 40)
+      (apertureShape RndRect)
+      (width 1.5)
+      (height 2.0)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X1.500mm Y2.000mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 41)
+      (apertureShape RndRect)
+      (width 2.0)
+      (height 1.5)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X2.000mm Y1.500mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 42)
+      (apertureShape RndRect)
+      (width 1.6)
+      (height 0.3)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X1.600mm Y0.300mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 43)
+      (apertureShape RndRect)
+      (width 0.3)
+      (height 1.6)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X0.300mm Y1.600mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 44)
+      (apertureShape RndRect)
+      (width 1.016)
+      (height 1.651)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X1.016mm Y1.651mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 45)
+      (apertureShape RndRect)
+      (width 1.881)
+      (height 2.381)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X1.881mm Y2.381mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 46)
+      (apertureShape RndRect)
+      (width 2.381)
+      (height 1.881)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X2.381mm Y1.881mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 47)
+      (apertureShape RndRect)
+      (width 1.981)
+      (height 0.681)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X1.981mm Y0.681mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 48)
+      (apertureShape RndRect)
+      (width 0.681)
+      (height 1.981)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X0.681mm Y1.981mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 49)
+      (apertureShape RndRect)
+      (width 2.0)
+      (height 2.0)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X2.000mm Y2.000mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 50)
+      (apertureShape RndRect)
+      (width 2.032)
+      (height 0.6604)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X2.032mm Y0.660mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 51)
+      (apertureShape RndRect)
+      (width 0.6604)
+      (height 2.032)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X0.660mm Y2.032mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 52)
+      (apertureShape RndRect)
+      (width 2.381)
+      (height 2.381)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X2.381mm Y2.381mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 53)
+      (apertureShape RndRect)
+      (width 2.413)
+      (height 1.0414)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X2.413mm Y1.041mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 54)
+      (apertureShape RndRect)
+      (width 1.0414)
+      (height 2.413)
+      (holeDiam 0.0)
+      (desc "Rounded Rectangle X1.041mm Y2.413mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 55)
+      (apertureShape Rect)
+      (width 1.5)
+      (height 1.5)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.500mm Y1.500mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 56)
+      (apertureShape Rect)
+      (width 1.524)
+      (height 1.524)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.524mm Y1.524mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 57)
+      (apertureShape Rect)
+      (width 1.6)
+      (height 1.6)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.600mm Y1.600mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 58)
+      (apertureShape Rect)
+      (width 1.7)
+      (height 1.7)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.700mm Y1.700mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 59)
+      (apertureShape Rect)
+      (width 1.75)
+      (height 1.75)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.750mm Y1.750mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 60)
+      (apertureShape Rect)
+      (width 1.881)
+      (height 1.881)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.881mm Y1.881mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 61)
+      (apertureShape Rect)
+      (width 1.905)
+      (height 1.905)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.905mm Y1.905mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 62)
+      (apertureShape Rect)
+      (width 1.981)
+      (height 1.981)
+      (holeDiam 0.0)
+      (desc "Rectangle X1.981mm Y1.981mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 63)
+      (apertureShape Rect)
+      (width 2.081)
+      (height 2.081)
+      (holeDiam 0.0)
+      (desc "Rectangle X2.081mm Y2.081mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 64)
+      (apertureShape Rect)
+      (width 2.131)
+      (height 2.131)
+      (holeDiam 0.0)
+      (desc "Rectangle X2.131mm Y2.131mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 65)
+      (apertureShape Ellipse)
+      (width 2.9)
+      (height 2.9)
+      (holeDiam 0.0)
+      (desc "Ellipse X2.900mm Y2.900mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 66)
+      (apertureShape Ellipse)
+      (width 3.281)
+      (height 3.281)
+      (holeDiam 0.0)
+      (desc "Ellipse X3.281mm Y3.281mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 67)
+      (apertureShape Ellipse)
+      (width 4.5)
+      (height 4.5)
+      (holeDiam 0.0)
+      (desc "Ellipse X4.500mm Y4.500mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 68)
+      (apertureShape Ellipse)
+      (width 4.881)
+      (height 4.881)
+      (holeDiam 0.0)
+      (desc "Ellipse X4.881mm Y4.881mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 69)
+      (apertureShape Ellipse)
+      (width 1.016)
+      (height 1.016)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.016mm Y1.016mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureDef 
+      (dCode 70)
+      (apertureShape Ellipse)
+      (width 1.397)
+      (height 1.397)
+      (holeDiam 0.0)
+      (desc "Ellipse X1.397mm Y1.397mm H0.000mm 0.0deg (0.000mm,0.000mm) Flash")
+    )
+    (apertureAssn 
+      (apertureRef (dCode 10))
+      (itemMnemonic 
+        "[Drawn Symbols]"
+        "[Drawn Symbols]"
+        "[Drawn Symbols]"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 10))
+      (itemMnemonic 
+        "[Polygons]"
+        "[Polygons]"
+        "[Polygons]"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 10))
+      (itemMnemonic 
+        "LINE 10.0mil"
+        "LINE 0.25mm"
+        "LINE 25400app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 11))
+      (itemMnemonic 
+        "LINE 15.0mil"
+        "LINE 0.38mm"
+        "LINE 38100app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 12))
+      (itemMnemonic 
+        "LINE 19.7mil"
+        "LINE 0.50mm"
+        "LINE 50000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 13))
+      (itemMnemonic 
+        "LINE 3.9mil"
+        "LINE 0.10mm"
+        "LINE 10000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 14))
+      (itemMnemonic 
+        "LINE 39.4mil"
+        "LINE 1.00mm"
+        "LINE 100000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 15))
+      (itemMnemonic 
+        "LINE 5.0mil"
+        "LINE 0.13mm"
+        "LINE 12700app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 16))
+      (itemMnemonic 
+        "LINE 5.9mil"
+        "LINE 0.15mm"
+        "LINE 15000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 17))
+      (itemMnemonic 
+        "LINE 7.9mil"
+        "LINE 0.20mm"
+        "LINE 20000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 18))
+      (itemMnemonic 
+        "LINE 9.8mil"
+        "LINE 0.25mm"
+        "LINE 25000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 19))
+      (itemMnemonic 
+        "PAD EL 101.6mil 101.6mil 63.0mil 90.0deg (0.0mil,0.0mil)"
+        "PAD EL 2.58mm 2.58mm 1.60mm 90.0deg (0.00mm,0.00mm)"
+        "PAD EL 258100app 258100app 160000app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 20))
+      (itemMnemonic 
+        "PAD EL 110.2mil 110.2mil 74.8mil 270.0deg (0.0mil,0.0mil)"
+        "PAD EL 2.80mm 2.80mm 1.90mm 270.0deg (0.00mm,0.00mm)"
+        "PAD EL 280000app 280000app 190000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 21))
+      (itemMnemonic 
+        "PAD EL 125.2mil 125.2mil 74.8mil 270.0deg (0.0mil,0.0mil)"
+        "PAD EL 3.18mm 3.18mm 1.90mm 270.0deg (0.00mm,0.00mm)"
+        "PAD EL 318100app 318100app 190000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 22))
+      (itemMnemonic 
+        "PAD EL 59.1mil 59.1mil 35.4mil 270.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.50mm 1.50mm 0.90mm 270.0deg (0.00mm,0.00mm)"
+        "PAD EL 150000app 150000app 90000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 22))
+      (itemMnemonic 
+        "PAD EL 59.1mil 59.1mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.50mm 1.50mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 150000app 150000app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 22))
+      (itemMnemonic 
+        "PAD EL 59.1mil 59.1mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.50mm 1.50mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 150000app 150000app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 22))
+      (itemMnemonic 
+        "PAD EL 59.1mil 59.1mil 39.4mil 270.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.50mm 1.50mm 1.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD EL 150000app 150000app 100000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 22))
+      (itemMnemonic 
+        "PAD EL 59.1mil 59.1mil 39.4mil 90.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.50mm 1.50mm 1.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD EL 150000app 150000app 100000app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 23))
+      (itemMnemonic 
+        "PAD EL 60.0mil 60.0mil 38.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.52mm 1.52mm 0.97mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 152400app 152400app 96520app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 23))
+      (itemMnemonic 
+        "PAD EL 60.0mil 60.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.52mm 1.52mm 0.97mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 152400app 152400app 96520app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 24))
+      (itemMnemonic 
+        "PAD EL 63.0mil 63.0mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.60mm 1.60mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 160000app 160000app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 24))
+      (itemMnemonic 
+        "PAD EL 63.0mil 63.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.60mm 1.60mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 160000app 160000app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 25))
+      (itemMnemonic 
+        "PAD EL 66.9mil 66.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.70mm 1.70mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 170000app 170000app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 25))
+      (itemMnemonic 
+        "PAD EL 66.9mil 66.9mil 43.3mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.70mm 1.70mm 1.10mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 170000app 170000app 110000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 26))
+      (itemMnemonic 
+        "PAD EL 68.9mil 68.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.75mm 1.75mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 175000app 175000app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 27))
+      (itemMnemonic 
+        "PAD EL 74.1mil 74.1mil 35.4mil 270.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.88mm 1.88mm 0.90mm 270.0deg (0.00mm,0.00mm)"
+        "PAD EL 188100app 188100app 90000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 27))
+      (itemMnemonic 
+        "PAD EL 74.1mil 74.1mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.88mm 1.88mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 188100app 188100app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 27))
+      (itemMnemonic 
+        "PAD EL 74.1mil 74.1mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.88mm 1.88mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 188100app 188100app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 27))
+      (itemMnemonic 
+        "PAD EL 74.1mil 74.1mil 39.4mil 270.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.88mm 1.88mm 1.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD EL 188100app 188100app 100000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 27))
+      (itemMnemonic 
+        "PAD EL 74.1mil 74.1mil 39.4mil 90.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.88mm 1.88mm 1.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD EL 188100app 188100app 100000app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 28))
+      (itemMnemonic 
+        "PAD EL 75.0mil 75.0mil 38.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.91mm 1.91mm 0.97mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 190500app 190500app 96520app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 28))
+      (itemMnemonic 
+        "PAD EL 75.0mil 75.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.91mm 1.91mm 0.97mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 190500app 190500app 96520app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 29))
+      (itemMnemonic 
+        "PAD EL 78.0mil 78.0mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.98mm 1.98mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 198100app 198100app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 29))
+      (itemMnemonic 
+        "PAD EL 78.0mil 78.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 1.98mm 1.98mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 198100app 198100app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 30))
+      (itemMnemonic 
+        "PAD EL 81.9mil 81.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 2.08mm 2.08mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 208100app 208100app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 30))
+      (itemMnemonic 
+        "PAD EL 81.9mil 81.9mil 43.3mil 180.0deg (0.0mil,0.0mil)"
+        "PAD EL 2.08mm 2.08mm 1.10mm 180.0deg (0.00mm,0.00mm)"
+        "PAD EL 208100app 208100app 110000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 31))
+      (itemMnemonic 
+        "PAD EL 83.9mil 83.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD EL 2.13mm 2.13mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD EL 213100app 213100app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 32))
+      (itemMnemonic 
+        "PAD EL 86.6mil 86.6mil 63.0mil 90.0deg (0.0mil,0.0mil)"
+        "PAD EL 2.20mm 2.20mm 1.60mm 90.0deg (0.00mm,0.00mm)"
+        "PAD EL 220000app 220000app 160000app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 33))
+      (itemMnemonic 
+        "PAD RR 110.2mil 275.6mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.80mm 7.00mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 280000app 700000app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 34))
+      (itemMnemonic 
+        "PAD RR 118.1mil 63.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 3.00mm 1.60mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 300000app 160000app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 35))
+      (itemMnemonic 
+        "PAD RR 125.2mil 290.6mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 3.18mm 7.38mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 318100app 738100app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 36))
+      (itemMnemonic 
+        "PAD RR 133.1mil 78.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 3.38mm 1.98mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 338100app 198100app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 37))
+      (itemMnemonic 
+        "PAD RR 244.1mil 228.3mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 6.20mm 5.80mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 620000app 580000app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 38))
+      (itemMnemonic 
+        "PAD RR 259.1mil 243.3mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 6.58mm 6.18mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 658100app 618100app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 39))
+      (itemMnemonic 
+        "PAD RR 50.0mil 25.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.27mm 0.64mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 127000app 63500app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 40))
+      (itemMnemonic 
+        "PAD RR 59.1mil 78.7mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.50mm 2.00mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 150000app 200000app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 40))
+      (itemMnemonic 
+        "PAD RR 59.1mil 78.7mil 0.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.50mm 2.00mm 0.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD RR 150000app 200000app 0app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 41))
+      (itemMnemonic 
+        "PAD RR 59.1mil 78.7mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.50mm 2.00mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 150000app 200000app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 41))
+      (itemMnemonic 
+        "PAD RR 59.1mil 78.7mil 0.0mil 90.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.50mm 2.00mm 0.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD RR 150000app 200000app 0app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 42))
+      (itemMnemonic 
+        "PAD RR 63.0mil 11.8mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.60mm 0.30mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 160000app 30000app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 42))
+      (itemMnemonic 
+        "PAD RR 63.0mil 11.8mil 0.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.60mm 0.30mm 0.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD RR 160000app 30000app 0app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 43))
+      (itemMnemonic 
+        "PAD RR 63.0mil 11.8mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.60mm 0.30mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 160000app 30000app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 43))
+      (itemMnemonic 
+        "PAD RR 63.0mil 11.8mil 0.0mil 90.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.60mm 0.30mm 0.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD RR 160000app 30000app 0app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 44))
+      (itemMnemonic 
+        "PAD RR 65.0mil 40.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.65mm 1.02mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 165100app 101600app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 45))
+      (itemMnemonic 
+        "PAD RR 74.1mil 93.7mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.88mm 2.38mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 188100app 238100app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 45))
+      (itemMnemonic 
+        "PAD RR 74.1mil 93.7mil 0.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.88mm 2.38mm 0.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD RR 188100app 238100app 0app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 46))
+      (itemMnemonic 
+        "PAD RR 74.1mil 93.7mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.88mm 2.38mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 188100app 238100app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 46))
+      (itemMnemonic 
+        "PAD RR 74.1mil 93.7mil 0.0mil 90.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.88mm 2.38mm 0.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD RR 188100app 238100app 0app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 47))
+      (itemMnemonic 
+        "PAD RR 78.0mil 26.8mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.98mm 0.68mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 198100app 68100app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 47))
+      (itemMnemonic 
+        "PAD RR 78.0mil 26.8mil 0.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.98mm 0.68mm 0.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD RR 198100app 68100app 0app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 48))
+      (itemMnemonic 
+        "PAD RR 78.0mil 26.8mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.98mm 0.68mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 198100app 68100app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 48))
+      (itemMnemonic 
+        "PAD RR 78.0mil 26.8mil 0.0mil 90.0deg (0.0mil,0.0mil)"
+        "PAD RR 1.98mm 0.68mm 0.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD RR 198100app 68100app 0app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 49))
+      (itemMnemonic 
+        "PAD RR 78.7mil 78.7mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.00mm 2.00mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 200000app 200000app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 49))
+      (itemMnemonic 
+        "PAD RR 78.7mil 78.7mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.00mm 2.00mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD RR 200000app 200000app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 49))
+      (itemMnemonic 
+        "PAD RR 78.7mil 78.7mil 39.4mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.00mm 2.00mm 1.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 200000app 200000app 100000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 49))
+      (itemMnemonic 
+        "PAD RR 78.7mil 78.7mil 39.4mil 90.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.00mm 2.00mm 1.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD RR 200000app 200000app 100000app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 50))
+      (itemMnemonic 
+        "PAD RR 80.0mil 26.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.03mm 0.66mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 203200app 66040app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 51))
+      (itemMnemonic 
+        "PAD RR 80.0mil 26.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.03mm 0.66mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 203200app 66040app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 52))
+      (itemMnemonic 
+        "PAD RR 93.7mil 93.7mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.38mm 2.38mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 238100app 238100app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 52))
+      (itemMnemonic 
+        "PAD RR 93.7mil 93.7mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.38mm 2.38mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD RR 238100app 238100app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 52))
+      (itemMnemonic 
+        "PAD RR 93.7mil 93.7mil 39.4mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.38mm 2.38mm 1.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 238100app 238100app 100000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 52))
+      (itemMnemonic 
+        "PAD RR 93.7mil 93.7mil 39.4mil 90.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.38mm 2.38mm 1.00mm 90.0deg (0.00mm,0.00mm)"
+        "PAD RR 238100app 238100app 100000app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 53))
+      (itemMnemonic 
+        "PAD RR 95.0mil 41.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.41mm 1.04mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD RR 241300app 104140app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 54))
+      (itemMnemonic 
+        "PAD RR 95.0mil 41.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
+        "PAD RR 2.41mm 1.04mm 0.00mm 270.0deg (0.00mm,0.00mm)"
+        "PAD RR 241300app 104140app 0app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 55))
+      (itemMnemonic 
+        "PAD SQ 59.1mil 59.1mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.50mm 1.50mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 150000app 150000app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 56))
+      (itemMnemonic 
+        "PAD SQ 60.0mil 60.0mil 38.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.52mm 1.52mm 0.97mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 152400app 152400app 96520app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 56))
+      (itemMnemonic 
+        "PAD SQ 60.0mil 60.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.52mm 1.52mm 0.97mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 152400app 152400app 96520app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 56))
+      (itemMnemonic 
+        "PAD SQ 60.0mil 60.0mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.52mm 1.52mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 152400app 152400app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 57))
+      (itemMnemonic 
+        "PAD SQ 63.0mil 63.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.60mm 1.60mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 160000app 160000app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 58))
+      (itemMnemonic 
+        "PAD SQ 66.9mil 66.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.70mm 1.70mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 170000app 170000app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 58))
+      (itemMnemonic 
+        "PAD SQ 66.9mil 66.9mil 43.3mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.70mm 1.70mm 1.10mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 170000app 170000app 110000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 59))
+      (itemMnemonic 
+        "PAD SQ 68.9mil 68.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.75mm 1.75mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 175000app 175000app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 60))
+      (itemMnemonic 
+        "PAD SQ 74.1mil 74.1mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.88mm 1.88mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 188100app 188100app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 61))
+      (itemMnemonic 
+        "PAD SQ 75.0mil 75.0mil 38.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.91mm 1.91mm 0.97mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 190500app 190500app 96520app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 61))
+      (itemMnemonic 
+        "PAD SQ 75.0mil 75.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.91mm 1.91mm 0.97mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 190500app 190500app 96520app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 61))
+      (itemMnemonic 
+        "PAD SQ 75.0mil 75.0mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.91mm 1.91mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 190500app 190500app 100000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 62))
+      (itemMnemonic 
+        "PAD SQ 78.0mil 78.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.98mm 1.98mm 1.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 198100app 198100app 100000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 63))
+      (itemMnemonic 
+        "PAD SQ 81.9mil 81.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 2.08mm 2.08mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 208100app 208100app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 63))
+      (itemMnemonic 
+        "PAD SQ 81.9mil 81.9mil 43.3mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 2.08mm 2.08mm 1.10mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 208100app 208100app 110000app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 64))
+      (itemMnemonic 
+        "PAD SQ 83.9mil 83.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 2.13mm 2.13mm 1.10mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 213100app 213100app 110000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 65))
+      (itemMnemonic 
+        "VIA EL 114.2mil 114.2mil 100.0mil 270.0deg (0.0mil,0.0mil)"
+        "VIA EL 2.90mm 2.90mm 2.54mm 270.0deg (0.00mm,0.00mm)"
+        "VIA EL 290000app 290000app 254000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 66))
+      (itemMnemonic 
+        "VIA EL 129.2mil 129.2mil 100.0mil 270.0deg (0.0mil,0.0mil)"
+        "VIA EL 3.28mm 3.28mm 2.54mm 270.0deg (0.00mm,0.00mm)"
+        "VIA EL 328100app 328100app 254000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 67))
+      (itemMnemonic 
+        "VIA EL 177.2mil 177.2mil 157.5mil 0.0deg (0.0mil,0.0mil)"
+        "VIA EL 4.50mm 4.50mm 4.00mm 0.0deg (0.00mm,0.00mm)"
+        "VIA EL 450000app 450000app 400000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 67))
+      (itemMnemonic 
+        "VIA EL 177.2mil 177.2mil 157.5mil 270.0deg (0.0mil,0.0mil)"
+        "VIA EL 4.50mm 4.50mm 4.00mm 270.0deg (0.00mm,0.00mm)"
+        "VIA EL 450000app 450000app 400000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 68))
+      (itemMnemonic 
+        "VIA EL 192.2mil 192.2mil 157.5mil 0.0deg (0.0mil,0.0mil)"
+        "VIA EL 4.88mm 4.88mm 4.00mm 0.0deg (0.00mm,0.00mm)"
+        "VIA EL 488100app 488100app 400000app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 68))
+      (itemMnemonic 
+        "VIA EL 192.2mil 192.2mil 157.5mil 270.0deg (0.0mil,0.0mil)"
+        "VIA EL 4.88mm 4.88mm 4.00mm 270.0deg (0.00mm,0.00mm)"
+        "VIA EL 488100app 488100app 400000app 270.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 69))
+      (itemMnemonic 
+        "VIA EL 40.0mil 40.0mil 18.0mil 0.0deg (0.0mil,0.0mil)"
+        "VIA EL 1.02mm 1.02mm 0.46mm 0.0deg (0.00mm,0.00mm)"
+        "VIA EL 101600app 101600app 45720app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 69))
+      (itemMnemonic 
+        "VIA EL 40.0mil 40.0mil 18.0mil 90.0deg (0.0mil,0.0mil)"
+        "VIA EL 1.02mm 1.02mm 0.46mm 90.0deg (0.00mm,0.00mm)"
+        "VIA EL 101600app 101600app 45720app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 70))
+      (itemMnemonic 
+        "VIA EL 55.0mil 55.0mil 18.0mil 0.0deg (0.0mil,0.0mil)"
+        "VIA EL 1.40mm 1.40mm 0.46mm 0.0deg (0.00mm,0.00mm)"
+        "VIA EL 139700app 139700app 45720app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 70))
+      (itemMnemonic 
+        "VIA EL 55.0mil 55.0mil 18.0mil 90.0deg (0.0mil,0.0mil)"
+        "VIA EL 1.40mm 1.40mm 0.46mm 90.0deg (0.00mm,0.00mm)"
+        "VIA EL 139700app 139700app 45720app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 22))
+      (itemMnemonic 
+        "VIA EL 59.1mil 59.1mil 59.1mil 90.0deg (0.0mil,0.0mil)"
+        "VIA EL 1.50mm 1.50mm 1.50mm 90.0deg (0.00mm,0.00mm)"
+        "VIA EL 150000app 150000app 150000app 90.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 27))
+      (itemMnemonic 
+        "VIA EL 74.1mil 74.1mil 59.1mil 90.0deg (0.0mil,0.0mil)"
+        "VIA EL 1.88mm 1.88mm 1.50mm 90.0deg (0.00mm,0.00mm)"
+        "VIA EL 188100app 188100app 150000app 90.0deg (0app,0app)"
+      )
+    )
+    (camQueueEntry "GTL"
+      (layerList 
+        (layerNumRef 1)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+      (outputVias True)
+    )
+    (camQueueEntry "GKO"
+      (layerList 
+        (layerNumRef 3)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+    )
+    (camQueueEntry "GBL"
+      (layerList 
+        (layerNumRef 2)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+      (outputVias True)
+    )
+    (camQueueEntry "GTS"
+      (layerList 
+        (layerNumRef 4)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+    )
+    (camQueueEntry "GBS"
+      (layerList 
+        (layerNumRef 5)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+    )
+    (camQueueEntry "GTO"
+      (layerList 
+        (layerNumRef 6)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+      (outputVias True)
+      (outputRefDes True)
+      (outputType True)
+      (outputValue True)
+    )
+    (camQueueEntry "GBO"
+      (layerList 
+        (layerNumRef 7)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+      (outputVias True)
+      (outputRefDes True)
+      (outputType True)
+      (outputValue True)
+    )
+    (camQueueEntry "GTM"
+      (layerList 
+        (layerNumRef 12)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+      (outputVias True)
+    )
+    (camQueueEntry "GBM"
+      (layerList 
+        (layerNumRef 13)
+      )
+      (isSelected True)
+      (drillSymSize 2.032)
+      (outputPads True)
+      (outputVias True)
+    )
   )
   (ncDrillSettings 
     (units mm)
