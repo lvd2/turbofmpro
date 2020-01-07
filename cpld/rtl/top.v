@@ -54,6 +54,17 @@ module top
 	wire saa_sel; // 1 -- saa selected, 0 -- YM selected
 
 	wire fm_dac_ena;
+	
+	reg saa_clk_ena;
+
+
+	// saa clock control (stop clock on reset)
+	always @(posedge fclk, negedge ayres_n)
+	if( !ayres_n )
+		saa_clk_ena <= 1'b0;
+	else if( saa_sel )
+		saa_clk_ena <= 1'b1;
+
 
 
 	// reset resync
@@ -69,12 +80,13 @@ module top
 
 
 
+
 	// clocks generator
 	clocks clocks
 	(
 		.fclk(fclk),
 
-		.saa_enabled(mode_enable_saa),
+		.saa_enabled(saa_clk_ena),
 
 		.ymclk (ymclk ),
 		.saaclk(saaclk)

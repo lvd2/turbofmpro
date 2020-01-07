@@ -42,9 +42,10 @@ module clocks
 	//
 	initial saa_cnt <= 3'd0;
 	//
-	always @(posedge fclk)
-////	if( saa_cnt==3'd6 )
-	if( saa_cnt[2:1]==2'b11 )
+	always @(posedge fclk, negedge saa_enabled)
+	if( !saa_enabled )
+		saa_cnt <= 3'd0;
+	else if( saa_cnt[2:1]==2'b11 )
 		saa_cnt <= 3'd0;
 	else
 		saa_cnt <= saa_cnt + 3'd1;
