@@ -1,8 +1,8 @@
-ACCEL_ASCII "D:\SVN\turbofmpro\trunk\pcad\TurboFMpro_b.pcb"
+ACCEL_ASCII "Z:\home\lvd\d\turbofmpro\pcad\TurboFMpro_b.pcb"
 
 (asciiHeader 
   (asciiVersion 3 0)
-  (timeStamp 2021 8 8 10 12 5)
+  (timeStamp 2021 11 11 21 11 24)
   (program "P-CAD 2006 PCB" "19.02.9589")
   (copyright "Copyright © 1991-2006 Altium Limited")
   (fileAuthor "")
@@ -25133,7 +25133,7 @@ ACCEL_ASCII "D:\SVN\turbofmpro\trunk\pcad\TurboFMpro_b.pcb"
     (units mm)
     (numFormat gbr44)
     (autoDrawApertureSize 0.254)
-    (outputPath "Z:\\home\\lvd\\d\\turbofmpro\\pcad\\gerbers")
+    (outputPath "Z:\\home\\lvd\\d\\turbofmpro\\pcad\\gerbers_revB")
     (viewLog False)
     (autoClear True)
     (g54Option False)
@@ -25816,14 +25816,6 @@ ACCEL_ASCII "D:\SVN\turbofmpro\trunk\pcad\TurboFMpro_b.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 24))
-      (itemMnemonic 
-        "PAD EL 63.0mil 63.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
-        "PAD EL 1.60mm 1.60mm 1.00mm 180.0deg (0.00mm,0.00mm)"
-        "PAD EL 160000app 160000app 100000app 180.0deg (0app,0app)"
-      )
-    )
-    (apertureAssn 
       (apertureRef (dCode 25))
       (itemMnemonic 
         "PAD EL 66.9mil 66.9mil 43.3mil 0.0deg (0.0mil,0.0mil)"
@@ -25909,14 +25901,6 @@ ACCEL_ASCII "D:\SVN\turbofmpro\trunk\pcad\TurboFMpro_b.pcb"
         "PAD EL 78.0mil 78.0mil 39.4mil 0.0deg (0.0mil,0.0mil)"
         "PAD EL 1.98mm 1.98mm 1.00mm 0.0deg (0.00mm,0.00mm)"
         "PAD EL 198100app 198100app 100000app 0.0deg (0app,0app)"
-      )
-    )
-    (apertureAssn 
-      (apertureRef (dCode 29))
-      (itemMnemonic 
-        "PAD EL 78.0mil 78.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
-        "PAD EL 1.98mm 1.98mm 1.00mm 180.0deg (0.00mm,0.00mm)"
-        "PAD EL 198100app 198100app 100000app 180.0deg (0app,0app)"
       )
     )
     (apertureAssn 
@@ -26274,9 +26258,9 @@ ACCEL_ASCII "D:\SVN\turbofmpro\trunk\pcad\TurboFMpro_b.pcb"
     (apertureAssn 
       (apertureRef (dCode 57))
       (itemMnemonic 
-        "PAD SQ 63.0mil 63.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
-        "PAD SQ 1.60mm 1.60mm 1.00mm 180.0deg (0.00mm,0.00mm)"
-        "PAD SQ 160000app 160000app 100000app 180.0deg (0app,0app)"
+        "PAD SQ 63.0mil 63.0mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.60mm 1.60mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 160000app 160000app 100000app 0.0deg (0app,0app)"
       )
     )
     (apertureAssn 
@@ -26338,9 +26322,9 @@ ACCEL_ASCII "D:\SVN\turbofmpro\trunk\pcad\TurboFMpro_b.pcb"
     (apertureAssn 
       (apertureRef (dCode 62))
       (itemMnemonic 
-        "PAD SQ 78.0mil 78.0mil 39.4mil 180.0deg (0.0mil,0.0mil)"
-        "PAD SQ 1.98mm 1.98mm 1.00mm 180.0deg (0.00mm,0.00mm)"
-        "PAD SQ 198100app 198100app 100000app 180.0deg (0app,0app)"
+        "PAD SQ 78.0mil 78.0mil 39.4mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 1.98mm 1.98mm 1.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 198100app 198100app 100000app 0.0deg (0app,0app)"
       )
     )
     (apertureAssn 
@@ -26552,7 +26536,7 @@ ACCEL_ASCII "D:\SVN\turbofmpro\trunk\pcad\TurboFMpro_b.pcb"
     (ncDrillFormat 4 2)
      (codeFormat AsciiNone)
     (zeroFormat None)
-    (outputPath "Z:\\HOME\\LVD\\D\\TURBOFMPRO\\PCAD\\GERBERS")
+    (outputPath "Z:\\HOME\\LVD\\D\\TURBOFMPRO\\PCAD\\GERBERS_REVB")
     (viewLog True)
     (autoClear True)
     (toolDef (toolCode 1) (toolDiam 0.4572) )

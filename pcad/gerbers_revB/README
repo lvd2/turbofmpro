@@ -1,0 +1,11 @@
+TURBOFMPRO.DRL - drill
+TURBOFMPRO.GKO - board outline
+TURBOFMPRO.GTO - top silk
+TURBOFMPRO.GTS - top mask
+TURBOFMPRO.GBO - bottom silk
+TURBOFMPRO.GBS - bottom mask
+TURBOFMPRO.GTL - top copper
+TURBOFMPRO.GTM - copper under top
+TURBOFMPRO.GBM - copper under bottom
+TURBOFMPRO.GBL - bottom copper
+
