@@ -83,6 +83,8 @@ set_location_assignment PIN_9 -to saacs_n
 set_location_assignment PIN_10 -to saawr_n
 set_location_assignment PIN_99 -to ymop1d
 set_location_assignment PIN_98 -to ymop2d
+set_location_assignment PIN_97 -to pll[1]
+set_location_assignment PIN_96 -to pll[0]
 set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
 set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
 set_global_assignment -name VERILOG_FILE rtl/bus.v
