@@ -1,0 +1,1082 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<meta name="GENERATOR" content="Visual Page 1.0 for Windows">
+<meta http-equiv="Content-Type" content="text/html;CHARSET=iso-8859-1"><title>POF2JED Help</title></head>
+<body>
+<blockquote><div style="text-align: left;"><small><font style="font-weight: bold; font-family: Verdana;" color="#0033ff" size="6"><small>ATF15xx Industry Standard Compatible CPLD Conversion</small></font></small></div><hr style="width: 100%; height: 2px;"><p style="font-family: Verdana;"><small><font style="font-family: Verdana;" color="#0033ff" size="5"><small><b>Introduction</b></small></font></small></p><div style="text-align: justify;"><span style="font-family: Verdana;">The ATF15xx complex
+programmable logic device (CPLD) product family
+offers&nbsp;high performance devices that are pin and functional
+compatible with the industry standard CPLDs. Microchip&nbsp;offers
+the ATF1500, ATF1502, ATF1504 and the ATF1508 CPLDs. The ATF1500 is a
+32-macrocell (MC) device and is offered in 44-lead PLCC and TQFP
+packages. The ATF1502 is a 32-macrocell&nbsp;device with JTAG
+BST/ISP
+support and is offered in 44-lead PLCC and TQFP packages. The ATF1504
+is a 64-macrocell&nbsp;device with JTAG BST/ISP support and is
+offered
+in 44-lead PLCC and TQFP,&nbsp;84-lead PLCC and 100-lead TQFP
+packages.
+The ATF1508 is a 128-macrocell&nbsp;device with JTAG BST/ISP
+support
+and is offered in 84-lead PLCC, 100-lead TQFP and PQFP packages. As
+shown in Table 1, the
+ATF15xx family of CPLDs are offered in standard-power, low-power, 5V
+VCC
+and 3.3V VCC versions.</span></div><p style="font-family: Verdana; text-decoration: underline;">
+Table 1.&nbsp;ATF15xx Family</p>
+<table style="background-color: white; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="vertical-align: middle; font-family: Verdana; text-align: left; color: white; background-color: rgb(0, 0, 102);">
+<blockquote><font size="4"><b>Device</b></font>
+</blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; color: white; background-color: rgb(0, 0, 102);" valign="middle">
+<blockquote><font size="4"><b>ISP
+capability</b></font> </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; color: white; background-color: rgb(0, 0, 102);" valign="middle">
+<blockquote><font size="4"><b>Description</b></font>
+</blockquote>
+</td>
+</tr>
+<tr>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>ATF1500A </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>No </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>5V Standard-Power Device </blockquote>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle; font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);">
+<blockquote>ATF1500AL </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>No </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>5V Low-Power Device </blockquote>
+</td>
+</tr>
+<tr>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" height="20" valign="middle">
+<blockquote>ATF1502AS<br>
+ATF1504AS<br>
+ATF1508AS </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" height="20" valign="middle">
+<blockquote>Yes </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" height="20" valign="middle">
+<blockquote>5V Standard-Power Device </blockquote>
+</td>
+</tr>
+<tr>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>ATF1502ASL<br>
+ATF1504ASL<br>
+ATF1508ASL </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Yes </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>5V Low-Power Device </blockquote>
+</td>
+</tr>
+<tr>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>ATF1502ASV<br>
+ATF1504ASV<br>
+ATF1508ASV </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Yes </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>3.3V Standard-Power Device </blockquote>
+</td>
+</tr>
+<tr>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>ATF1504ASVL<br>
+ATF1508ASVL </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Yes </blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>3.3V Low-Power Device </blockquote>
+</td>
+</tr>
+</tbody>
+</table><span style="font-family: Verdana;"><br></span><div style="text-align: justify;"><span style="font-family: Verdana;">Table
+2 lists the competitor devices that can be converted over to their
+ATF15xx equivalents. It is also possible to convert to a different
+device variant in the same density (e.g. 3032A can be converted to
+an 1502AS JEDEC file by specifying&nbsp;"1502AS" as the target device type in the POF2JED software).</span></div><p style="font-family: Verdana; text-decoration: underline;"><small><font size="4"><small>Table 2.	 List of Target Devices</small></font></small></p><p style="font-family: Verdana; text-align: justify;"> 
+	 
+	<table style="background-color: white; width: 100%;" border="1">
+	<tbody><tr>
+		<td style="width: 33%; vertical-align: middle; color: white; background-color: rgb(0, 0, 102);">
+
+			<blockquote>
+<span style="font-weight: bold;">Competitor CPLD</span></blockquote>
+		</td>
+		<td style="background-color: rgb(0, 0, 102); color: white;" valign="middle" width="33%">
+
+			<blockquote>
+<span style="font-weight: bold;">Default Microchip Target CPLD</span></blockquote>
+		</td>
+		
+	</tr>
+	<tr>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7032 PLCC44/TQFP44			</blockquote>
+		</td>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1500A or 1502AS			</blockquote>
+		</td>
+		
+	</tr>
+	
+	
+	
+	<tr>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7032S&nbsp;PLCC44/TQFP44						</blockquote>
+		</td>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1502AS			</blockquote>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7032AE&nbsp;PLCC44/TQFP44						</blockquote>
+		</td>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1502ASV			</blockquote>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+3032A&nbsp;PLCC44/TQFP44						</blockquote>
+		</td>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1502ASV			</blockquote>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7064 PLCC44/TQFP44/PLCC84			</blockquote>
+		</td>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1504AS			</blockquote>
+		</td>
+		
+	</tr>
+	
+	
+	
+	
+	
+	<tr>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7064S PLCC44/TQFP44/PLCC84/TQFP100			</blockquote>
+		</td>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1504AS			</blockquote>
+		</td>
+		
+	</tr>
+	
+	
+	
+	
+	<tr>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7064AE TQFP44/PLCC44/TQFP100			</blockquote>
+		</td>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1504ASV			</blockquote>
+		</td>
+		
+	</tr>
+	
+	
+	<tr>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+3064A TQFP44/PLCC44/TQFP100			</blockquote>
+		</td>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1504ASV			</blockquote>
+		</td>
+		
+	</tr>
+	
+	
+	<tr>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7128E PLCC84/PQFP100			</blockquote>
+		</td>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1508AS			</blockquote>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7128S PLCC84/TQFP100/PQFP100			</blockquote>
+		</td>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1508AS			</blockquote>
+		</td>
+		
+	</tr>
+	
+	
+	
+	
+	
+	
+	
+	<tr>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7128A PLCC84/TQFP100			</blockquote>
+		</td>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1508ASV			</blockquote>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+7128AE PLCC84/TQFP100				</blockquote>
+		</td>
+		<td style="background-color: rgb(195, 244, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1508ASV			</blockquote>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+3128A TQFP100			</blockquote>
+		</td>
+		<td style="background-color: rgb(204, 255, 255);" valign="middle" width="33%">
+
+			<blockquote>
+1508ASV			</blockquote>
+		</td>
+		
+	</tr>
+	</tbody></table></p><p style="font-family: Verdana; text-align: justify;">This document
+describes how to use the&nbsp;POF2JED conversion software utility that
+converts a programming output file (.POF) to the
+ATF15xx&nbsp;programming file in JEDEC format (.JED) without any
+functionality or performance
+loss. It is available on the Microchip website at the following URL:<br></p><p style="font-family: Verdana;">
+<a target="_blank" href="http://www.microchip.com/design-centers/programmable-logic/spld-cpld/tools/software/pof2jed">http://www.microchip.com/design-centers/programmable-logic/spld-cpld/tools/software/pof2jed</a></p><span style="font-family: Verdana;"><span style="text-decoration: underline;"><br></span></span><hr style="width: 100%; height: 2px;">
+	<p style="font-family: Verdana;"><small><font color="#0033ff" size="5"><small><b>How to use POF2JED? (DOS)</b></small></font></small><br></p><div style="text-align: justify; font-family: Verdana;">
+The POF2JED conversion utility executable [~\POF2JED\bin\POF2JED.exe] can be
+executed via&nbsp;DOS command. This utility automatically chooses the
+target ATF15xx device type that is equivalent to the device specified
+in the POF file.<br></div><p style="font-family: Verdana;">
+Syntax: <big><span style="font-family: Courier New;">POF2JED [-i] filename.POF [-o filename.JED] [options]</span></big><br style="font-family: Courier New;">
+</p><p style="font-family: Verdana;">Example: <big><span style="font-family: Courier New,Courier,monospace;">
+POF2JED example.pof -device 1502asv -secure -race_cover_off</span></big></p><p style="font-family: Verdana; text-align: justify;">This
+will convert example.pof into an ATF1502ASV JEDEC file named
+example.jed with the read security feature enabled and will not try to
+resolve potential race conditions during the conversion process.</p><p style="font-family: Verdana; text-align: justify;">The output is a JEDEC (.JED) file that is used to program the ATF15xx
+CPLD. A report that shows the results of the conversion is also
+generated (.TXT).<br></p><p style="font-family: Verdana;">
+To list command line options, use the following DOS command:<br>
+<br><big><span style="font-family: Courier New,Courier,monospace;">
+POF2JED [device option]</span></big><br>
+</p>
+
+<p style="font-family: Verdana;">Select one of the following Device options:<br><big><span style="font-family: Courier New,Courier,monospace;">
+-1500A</span><br style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">
+-1502AS</span><br style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">
+-1504AS</span><br style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">
+-1508AS</span><br style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">
+-1502ASV</span><br style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">
+-1504ASV</span><br style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">
+-1508ASV</span></big><span style="font-style: italic;"></span><br></p><div style="text-align: justify;"><span style="font-style: italic; font-family: Verdana;">Note: A JEDEC file generated for the 5V/3V standard-power device type can be
+used to program the 5V/3V low-power device type. For example, a JEDEC
+file generated for the ATF1502AS device can be used to program the
+ATF1502ASL device.</span></div><p style="font-family: Verdana; text-decoration: underline;"><small><font size="4"><small>Table 3. Standard Commnad Line Options</small></font></small></p><p style="font-family: Verdana;">
+<table style="background-color: white; width: 100%;" border="1">
+<tbody>
+<tr><td style="background-color: rgb(0, 0, 102); color: white; font-weight: bold; width: 194px;">Option</td><td style="background-color: rgb(0, 0, 102); color: white; font-weight: bold; width: 186px;">Parameters</td><td rowspan="1" colspan="1" style="background-color: rgb(0, 0, 102); color: white; font-weight: bold; width: 897px;">Description</td></tr><tr>
+<td style="vertical-align: middle; width: 194px; background-color: rgb(204, 255, 255);">-i</td>
+<td style="background-color: rgb(204, 255, 255); width: 186px;"><span style="font-style: italic;">filename.pof</span></td><td style="background-color: rgb(204, 255, 255); width: 897px;" colspan="1" valign="middle">Specify the name of the input file (.POF). The "-i" switch is optional.</td>
+</tr>
+<tr>
+<td style="width: 194px; background-color: rgb(195, 244, 255);" valign="middle">-o</td>
+<td style="width: 186px; background-color: rgb(195, 244, 255);"><span style="font-style: italic;">filename.jed</span></td><td style="width: 897px; text-align: justify; background-color: rgb(195, 244, 255);" colspan="1" valign="middle">Specify the name of the output file (.JED). By default, POF2JED will use the filename of the POF file.</td>
+</tr>
+
+<tr>
+<td colspan="1" style="background-color: rgb(204, 255, 255);" rowspan="7">-device</td><td style="background-color: rgb(204, 255, 255); width: 186px;">1500a</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" valign="middle">Specify
+the target device type as ATF1500A. Use this
+device type&nbsp;to generate a JEDEC file for the ATF1500A/AL device.
+This
+is only applicable for&nbsp;7032 (non-ISP) POF files. By default, POF2JED
+will use this target device type when converting&nbsp;7032 POF files.<br></td>
+
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); width: 186px;">1502as</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" valign="middle">Specify
+the target device type as ATF1502AS. Use this
+device type to generate a JEDEC file for the ATF1502AS/ASL.&nbsp;By
+default, POF2JED will use this target device type when
+converting&nbsp;7032S POF files. This device type can be used to
+convert&nbsp;7032/7032AE/3032A POF
+files into ATF1502AS/ASL JEDEC files.</td>
+
+</tr>
+
+<tr><td style="background-color: rgb(204, 255, 255);">1504as</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" valign="middle">Specify
+the target device type as ATF1504AS. Use this
+device type to generate a JEDEC file for the ATF1504AS/ASL.&nbsp;By
+default, POF2JED will use this target device type when
+converting&nbsp;7064/7064S POF files.&nbsp;This device type can be used
+to convert&nbsp;7064AE/3064A POF
+files into ATF1504AS JEDEC files.</td></tr><tr><td style="background-color: rgb(204, 255, 255);">1508as</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" valign="middle">Specify
+the target device type as ATF1504AS. Use this
+device type to generate a JEDEC file for the ATF1508AS/ASL.&nbsp;By
+default, POF2JED will use this target device type when
+converting&nbsp;7128E/7128S POF files.&nbsp;This device type can be
+used to convert&nbsp;7128AE/3128A POF
+files into ATF1508AS JEDEC files.</td></tr><tr><td style="background-color: rgb(204, 255, 255);">1502asv</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" valign="middle">Specify
+the target device type as ATF1502ASV. Use this
+device type to generate a JEDEC file for the ATF1502ASV.&nbsp;By
+default, POF2JED will use this target device type when converting&nbsp;7032AE/3032A
+POF files. This device type can be used to convert&nbsp;7032/7032S POF
+files into ATF1502ASV JEDEC files.</td></tr><tr><td style="background-color: rgb(204, 255, 255);">1504asv</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" valign="middle">Specify
+the target device type as ATF1504ASV. Use this
+device type to generate a JEDEC file for the ATF1504ASV/ASVL.&nbsp;By
+default, POF2JED will use this target device type when
+converting&nbsp;7064AE/3064A POF files.&nbsp;This device type can be
+used to convert&nbsp;7064/7064S POF
+files into ATF1504ASV JEDEC files.</td></tr><tr><td style="background-color: rgb(204, 255, 255);">1508asv</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" valign="middle">Specify
+the target device type as ATF1508ASV. Use this
+device type to generate a JEDEC file for the ATF1508ASV/ASVL.&nbsp;By
+default, POF2JED will use this target device type when
+converting&nbsp;7128AE/3128A POF files.&nbsp;This device type can be
+used to convert&nbsp;7128E/7128S POF
+files into ATF1508ASV JEDEC files.</td></tr><tr>
+<td style="width: 194px; background-color: rgb(195, 244, 255);" valign="middle">-PD1</td>
+<td style="width: 186px; background-color: rgb(195, 244, 255);"></td><td style="width: 897px; text-align: justify; background-color: rgb(195, 244, 255);" colspan="1" valign="middle">Enables the
+power down mode on pin PD1 for ATF15xx (defaults to
+Disabled).</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); width: 194px;" valign="middle">-PD2</td>
+<td style="background-color: rgb(204, 255, 255); width: 186px;"></td><td style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" colspan="1" valign="middle">Enables the
+power down mode on pin PD2 for ATF15xx&nbsp;(defaults to
+Disabled). Either PD1 or PD2 pin or both can be used to power down the
+part. This option can also be selected in the design source file. A
+logic high on these pins brings the device into the power down mode.
+Anytime the pin is asserted, the device will switch into a standby
+power mode and ignore all inputs. All pin transitions are ignored until
+the PD pin is brought to a logic low.<br>
+<br>
+Note: The translator may override this option setting if you enable
+this mode but the design is using the PD pin as user logic I/O.</td>
+</tr>
+<tr>
+<td style="width: 194px; background-color: rgb(195, 244, 255);" valign="middle">-powerdown</td>
+<td style="width: 186px; background-color: rgb(195, 244, 255);"></td><td style="width: 897px; text-align: justify; background-color: rgb(195, 244, 255);" colspan="1" valign="middle">Enables the
+power down mode (ATF1500/1500A only) (defaults to Disabled).</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); width: 194px;" valign="middle">-pinclk</td>
+<td style="background-color: rgb(204, 255, 255); width: 186px;"></td><td style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" colspan="1" valign="middle">Uses pin
+clock wherever applicable. Global clock will be used for product term
+Clock. This helps to improve performance of the design (defaults to
+Disabled).</td>
+</tr>
+<tr>
+<td style="width: 194px; background-color: rgb(195, 244, 255);" valign="middle">-race_cover_off</td>
+<td style="width: 186px; background-color: rgb(195, 244, 255);"></td><td style="width: 897px; text-align: justify; background-color: rgb(195, 244, 255);" colspan="1" valign="middle">This option turns off
+race coverage option (defaults to Enabled). This conversion will be the same
+as implemented in the .POF output file. However, if turned on, it will
+detect any potential race hazards and accordingly allocate additional
+resources available to correct the hazards. If the hazards cannot be
+corrected, a warning will appear in the report file.</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); width: 194px;" valign="middle">-secure</td>
+<td style="background-color: rgb(204, 255, 255); width: 186px;"></td><td style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" colspan="1" valign="middle">Sets
+security bit on (defaults to Disabled). A JEDEC file with the security bit
+enabled will be generated. When this JEDEC file is programmed into the
+devices it will be secured. When the device is secured it cannot be
+read and will perform normally in the design.</td>
+</tr>
+
+<tr>
+<td style="background-color: rgb(195, 244, 255);" rowspan="3">-slew</td><td style="width: 186px; background-color: rgb(195, 244, 255);">FAST</td><td colspan="1" rowspan="1" style="width: 897px; text-align: justify; background-color: rgb(195, 244, 255);" valign="middle">Sets output
+slew rate for all outputs to fast. A faster slew rate provides high-speed transitions
+and may introduce more&nbsp;transient noise. This is the default for 7000/7000E POF files.</td>
+
+</tr>
+<tr>
+<td style="width: 186px; background-color: rgb(195, 244, 255);">SLOW</td><td colspan="1" rowspan="1" style="width: 897px; text-align: justify; background-color: rgb(195, 244, 255);" valign="middle"> Sets output
+slew rate for all outputs to slow and can potentially reduce system noise. However, it does
+introduce a nominal delay.</td>
+
+</tr>
+<tr>
+<td style="width: 186px; background-color: rgb(195, 244, 255);">AUTO</td><td colspan="1" rowspan="1" style="width: 897px; text-align: justify; background-color: rgb(195, 244, 255);" valign="middle">Follows
+settings in POF file.&nbsp;This is the default for 7000S/7000A/7000AE/3000A POF files.</td>
+
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); width: 194px;" valign="middle">-pin_keep</td>
+<td style="background-color: rgb(204, 255, 255); width: 186px;"></td><td style="background-color: rgb(204, 255, 255); width: 897px; text-align: justify;" colspan="1" valign="middle">Enables pin-keeper circuits (defaults to Disabled). The pin-keeper circuits
+eliminate the need for external pull-up resistors and eliminate their
+DC power consumption.</td>
+</tr>
+</tbody>
+</table>
+</p><p style="font-family: Verdana; text-decoration: underline;"><small><font size="4"><small>Table 4. Advanced Command Line Options (1502AS/1504AS/1508AS)</small></font></small></p><p style="font-family: Verdana;">
+<table style="background-color: white; width: 100%;" border="1">
+<tbody>
+<tr><td style="background-color: rgb(0, 0, 102); color: white; font-weight: bold; font-family: Verdana; width: 238px;">Option</td><td style="background-color: rgb(0, 0, 102); color: white; font-weight: bold; font-family: Verdana; width: 227px;">Parameters</td><td style="background-color: rgb(0, 0, 102); color: white; font-weight: bold; font-family: Verdana; width: 1089px;" colspan="1" rowspan="1">Description</td></tr>
+<tr>
+<td colspan="1" style="font-family: Verdana; background-color: rgb(204, 255, 255); width: 238px;" rowspan="3">-mc_power</td><td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;">ON</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); font-family: Verdana; text-align: justify; width: 1089px;" valign="middle">Turns on
+Reduced Power mode for all macrocells.&nbsp;When this
+feature is turned on, power consumption is reduced. All macrocells draw
+approximately one-half the power in the reduced power mode compared to
+the standard power mode. There is a speed penalty when this option is
+enabled. Consult the device datasheet for details.</td>
+
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;">OFF</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); font-family: Verdana; text-align: justify; width: 1089px;" valign="middle">Turns off
+Reduced Power mode for all macrocells.</td>
+
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;">AUTO</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); font-family: Verdana; text-align: justify; width: 1089px;" valign="middle">Follows
+settings in POF file. This is the default setting. When this
+feature is turned on, power consumption is reduced. All macrocells draw
+approximately one-half the power in the reduced power mode compared to
+the standard power mode. There is a speed penalty when this option is
+enabled. Consult the device datasheet for details. </td>
+
+</tr>
+
+<tr>
+<td style="font-family: Verdana; width: 238px; background-color: rgb(195, 244, 255);" valign="middle">-power_reset</td>
+<td style="font-family: Verdana; width: 227px; background-color: rgb(195, 244, 255);"></td><td style="font-family: Verdana; text-align: justify; width: 1089px; background-color: rgb(195, 244, 255);" colspan="1" valign="middle">Sets device
+power-up reset hysteresis to large. This feature allows the device to
+reset only when Vcc starts below 0.7V (Vcc is turned off). This feature
+must be enabled if the power down mode is enabled (-PD1 and/or -PD2
+option). (defaults to Disabled).<br></td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 238px;" valign="middle">-GCLK1_ ITD</td>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;"></td><td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 1089px;" colspan="1" valign="middle">Disables
+ITD (Input Transition Detection circuitry) fuse on GCLK1. (defaults to Enabled). </td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 238px;" valign="middle">-GCLK2_ ITD</td>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;"></td><td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 1089px;" colspan="1" valign="middle">Disables
+ITD (Input Transition Detection circuitry) fuse on GCLK2. (defaults to Enabled).</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 238px;" valign="middle">-GCLK3_ ITD</td>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;"></td><td style="background-color: rgb(204, 255, 255); font-family: Verdana; text-align: justify; width: 1089px;" colspan="1" valign="middle">Disables
+ITD fuse on GCLK3 (defaults to Enabled).<br></td>
+</tr>
+<tr style="font-family: Verdana;" align="justify"><td style="background-color: rgb(204, 255, 255); width: 227px;" colspan="3" rowspan="1">
+The GCLKn ITD feature allows the user to save power by controlling whether
+the device will wake up on each clock edge even if no inputs are
+transitioning. When the feature is disabled, the devices will not wake
+up on each transition of the selected pin clock input. When enabled the
+pin clock transition will wake up the part <br>
+<br><span style="font-style: italic;">
+Note: The POF2JED will automatically enable/disable this feature
+depending on the type of design that is being converted. If any of the
+GCLK[1:3] pin goes to the Universal Interconnect Matrix, the ITD
+circuitry is always enabled, overriding the user setting. This only
+applies to 'L/Z' devices).</span></td></tr>
+<tr>
+<td style="font-family: Verdana; width: 238px; background-color: rgb(195, 244, 255);" rowspan="3">-open_out</td><td style="font-family: Verdana; width: 227px; background-color: rgb(195, 244, 255);">ON</td><td colspan="1" rowspan="1" style="font-family: Verdana; width: 1089px; text-align: justify; background-color: rgb(195, 244, 255);" valign="middle">Sets all outputs to Open-Collector mode.</td>
+
+</tr>
+<tr>
+<td style="font-family: Verdana; width: 227px; background-color: rgb(195, 244, 255);">OFF</td><td colspan="1" rowspan="1" style="font-family: Verdana; width: 1089px; text-align: justify; background-color: rgb(195, 244, 255);" valign="middle">Sets all outputs to
+Normal mode. This is the default setting for 7000/7000E POF files.</td>
+
+</tr>
+<tr>
+<td style="font-family: Verdana; width: 227px; background-color: rgb(195, 244, 255);">AUTO</td><td colspan="1" rowspan="1" style="font-family: Verdana; width: 1089px; text-align: justify; background-color: rgb(195, 244, 255);" valign="middle">Follows
+settings in POF file. This is the default setting for 7000S/7000A/7000AE/3000A POF files.</td>
+
+</tr>
+
+<tr>
+<td style="background-color: rgb(204, 255, 255);" rowspan="3">-JTAG</td><td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;">ON</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 1089px; text-align: justify;" valign="middle">Enables
+JTAG port.</td>
+
+</tr>
+<tr><td style="background-color: rgb(204, 255, 255); font-family: Verdana;">OFF</td><td style="background-color: rgb(204, 255, 255); font-family: Verdana;">Disables JTAG port. This is the default setting for 7000/7000E POF files. </td></tr><tr>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;">AUTO</td><td colspan="1" rowspan="1" style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 1089px; text-align: justify;" valign="middle">Follows
+settings in POF file. This is the default setting for 7000S/7000A/7000AE/3000A POF files.</td>
+
+</tr>
+<tr style="font-family: Verdana;" align="justify"><td style="background-color: rgb(204, 255, 255);" colspan="3" rowspan="1">When the JTAG option is turned on, the four JTAG port
+pins are disabled for use as I/O pins. When a JEDEC file with the JTAG
+bit 'on' is programmed into an ATF15xx ISP device, the JTAG port will
+automatically be enabled.&nbsp;The ATF15XX ISP devices are shipped to
+customers in the erased state, thereby enabling the JTAG port by
+default.</td></tr><tr>
+<td style="font-family: Verdana; width: 238px; background-color: rgb(195, 244, 255);" valign="middle">-TDI_PULLUP</td>
+<td style="font-family: Verdana; width: 227px; background-color: rgb(195, 244, 255);"></td><td style="font-family: Verdana; width: 1089px; text-align: justify; background-color: rgb(195, 244, 255);" colspan="1" valign="middle">Enables
+pull-up on TDI pin for 7000S/7000A/7000AE/3000A only (defaults
+to Disabled). Enabling this option will also enable the JTAG feature.</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 238px;" valign="middle">-TMS_PULLUP</td>
+<td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 227px;"></td><td style="background-color: rgb(204, 255, 255); font-family: Verdana; width: 1089px; text-align: justify;" colspan="1" valign="middle">Enables
+pull-up on TMS pin for 7000S/7000A/7000AE/3000A only (defaults
+to Disabled).&nbsp;Enabling this option will also enable the JTAG feature.</td>
+</tr>
+</tbody>
+</table>
+<b><br></b><span style="font-family: Verdana; text-decoration: underline;"></span>A screen snapshot of a
+conversion will look as follows:</p>
+<p style="font-family: Verdana;">
+<table style="background-color: white; width: 502px; height: 188px;" border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<p style="background-color: black; color: white;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;Microchip POF2JED Version 4.45.1 March 13, 2018</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;Copyright 2018 Microchip. All Rights
+Reserved.</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<br style="font-family: Courier New,Courier,monospace; font-weight: bold;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp; EPM3128ATC100-10 --&gt; ATF1508ASVTQFP100</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+&nbsp;Input file &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: boolean.pof</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+&nbsp;Output file &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : boolean.jed</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+&nbsp;Conversion Report file &nbsp;: boolean.txt</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<br style="font-family: Courier New,Courier,monospace; font-weight: bold;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;POF2JED processed 0 seconds</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;"><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+&nbsp;Conversion is completed</span><br>
+</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p style="font-family: Verdana;"> <small><font size="4"><small><b></b></small></font></small>Table 5 contains a listing of typical messages that appear in
+the DOS window in the process of running a POF2JED conversion:</p><p style="font-family: Verdana; text-decoration: underline;"><small><font size="4"><small>Table 5. List of Common Warning Messages</small></font></small></p>
+
+<p style="font-family: Verdana;">
+<table style="background-color: white; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: white; background-color: rgb(0, 0, 102); width: 678px;" valign="middle">
+<blockquote><font size="4"><b>Warning
+Message</b></font> </blockquote>
+</td>
+<td style="color: white; background-color: rgb(0, 0, 102); width: 882px;" valign="middle">
+<blockquote><font size="4"><b>Meaning</b></font>
+</blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); width: 678px;" valign="middle">GCLK2 ITD
+setting override: (ignore user request to disable)<br>
+<br>
+GCLK2 pin is used as a logic input so ITD wake-up enable is forced on</td>
+<td style="vertical-align: middle; text-align: justify; background-color: rgb(204, 255, 255); width: 882px;">This
+message appears if the user tries to use the -GCLK2_ITD option when
+running a POF2JED conversion. This means that the GCLK2_ITD option is
+enabled but the design is using the GCLK2 pin as input. <br><span style="font-style: italic;">
+Note: This will not affect the current consumption or behavior of a standard-power (5V/3V) device.</span> </td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255); width: 678px;" valign="middle">If
+Conversion is for a low voltage device, please use the -power_reset
+option.</td>
+<td style="background-color: rgb(195, 244, 255); text-align: justify; width: 882px;" valign="middle">
+<p>This message appears if the conversion is for an
+EPM7000/7000E/7000S POF file. </p>
+<p>If the target device is a 5 V device then the warning
+can be ignored. If the target device is a 3.3 V device then the user
+can either:<br></p><p>- &nbsp; Use -power_reset option<br>
+- &nbsp;Use -device 15xxASV which will automatically set power_reset bit
+thereby enabling large Hysteresis </p>
+
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255); width: 678px;" valign="middle">JTAG on:
+Error! Some or all four JTAG pins are used in your logic function.<br>
+<br>
+JTAG mode cannot be enabled.</td>
+<td style="background-color: rgb(204, 255, 255); text-align: justify; width: 882px;" valign="middle">This
+message appears if you try to turn on the JTAG port using the -JTAG ON
+option and the design is using the JTAG pins for logic I/O</td>
+</tr>
+</tbody>
+</table>
+<br>
+</p>
+<hr style="width: 100%; height: 2px;">
+<p style="font-family: Verdana;"><small><font color="#0033ff" size="5"><small><b>How to use POF2JED (Windows GUI)?</b></small></font></small></p><div style="text-align: justify;"><span style="font-family: Verdana;">The
+POF2JED conversion can also be controlled via graphical user interface (WinPOF2JED.exe). The
+program does conversion automatically taking into consideration the
+proper device and conversion options. When an input file is selected
+into the input field, POF2JED will automatically set the conversion
+options, such as output file name, device, jtag.. etc. However, those
+options can be reselected as designers wish. If the options do not
+violate any restictions, POF2JED will convert the with those options.
+Otherwise, it converts with default options.</span></div>
+<p style="font-family: Verdana;"><small> <font size="4"><small><b>Conversion
+options</b></small></font></small></p>
+<p style="font-family: Verdana;">The table below
+discribes the conversion options for POF2JED Windows version and DOS
+command equivalances.</p><p style="font-family: Verdana; text-decoration: underline;"><small><font size="4"><small>Table 6. Options in POF2JED Windows GUI and DOS Command Equivalents</small></font></small> </p>
+<p style="font-family: Verdana;">
+<table style="background-color: white; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="font-family: Verdana; text-align: left; color: white; background-color: rgb(0, 0, 102);" valign="middle">
+<blockquote><span style="font-weight: bold;">Option
+Fields</span></blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; color: white; background-color: rgb(0, 0, 102);" valign="middle">
+<blockquote><font size="4"><b>Value</b></font>
+</blockquote>
+</td>
+<td style="font-family: Verdana; text-align: left; color: white; background-color: rgb(0, 0, 102);" valign="middle">
+<blockquote><font size="4"><b>DOS
+Command Equivalence</b></font> </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Input File </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>boolean.pof </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-i boolean.pof </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Device </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>1504AS </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-device 1504AS </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Output File </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>boolean.jed </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-o boolean.jed </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Power Down Enable </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-powerdown </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Use Pin Clock </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-pinclk </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>PD1 Enable </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-PD1 </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>PD2 Enable </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-PD2 </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Race Cover Off </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-race_cover_off </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Set Security Bit On </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-secure </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Pin Keeper Enable </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-pin_keep </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Large Hysteresis for POF </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-power_reset </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Disable GCLK_IDT1 </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-GCLK_ITD1 </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Disable GCLK_IDT2 </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-GCLK_ITD2 </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Disable GCLK_IDT3 </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-GCLK_ITD3 </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Enable TDI_PULLUP </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-TDI_PULLUP </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Enable TMS_PULLUP </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>select </blockquote>
+</td>
+<td style="vertical-align: middle; background-color: rgb(195, 244, 255);">
+<blockquote>-TMS_PULLUP </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" rowspan="3" valign="middle">
+<blockquote>Slew Rate </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Fast </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-slew FAST </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Slow </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-slew SLOW </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Auto </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-slew AUTO </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" rowspan="3" valign="middle">
+<blockquote>Reduce MC Power </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>On </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-mc_power ON </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Off </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-mc_power OFF </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Auto </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-mc_power AUTO </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" rowspan="3" valign="middle">
+<blockquote>Set MC Output Types </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>On </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-open_out ON </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Off </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-open_out OFF </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>Auto </blockquote>
+</td>
+<td style="background-color: rgb(204, 255, 255);" valign="middle">
+<blockquote>-open_out AUTO </blockquote>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(195, 244, 255);" rowspan="3" valign="middle">
+<blockquote>JTAG Mode </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>On </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-JTAG ON </blockquote>
+</td>
+</tr>
+<tr><td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Off </blockquote>
+</td><td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-JTAG OFF </blockquote>
+</td></tr><tr>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>Auto </blockquote>
+</td>
+<td style="background-color: rgb(195, 244, 255);" valign="middle">
+<blockquote>-JTAG AUTO </blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p> <small><br><font style="font-family: Verdana;" size="4"><small><b>Searching for input and output
+files</b></small></font></small></p><ul style="text-align: justify;"><li><span style="font-family: Verdana;">There are two "Browse" buttons. One is used to search
+for input files (.pof), and another one is used to search for output
+files (.jed). The ouput file name can also be typed directly into
+output file box. The output field must include the full and correct
+path. If the path is not specified, POF2JED will generate output file
+and report file in ...\POF2JED\bin directory.</span></li></ul><ul style="text-align: justify;"><li><span style="font-family: Verdana;">Report files (.txt) and output files (.jed) can be
+opened from the file menu. The "Run" button is used to start the
+conversion after conversion options are selected.&nbsp;</span></li></ul>
+
+
+<hr style="width: 100%; height: 2px; font-family: Verdana;">
+<p style="font-family: Verdana;"><small><font color="#0033ff" size="5"><small><b>Enhanced Architecture Conversion Issues
+Specific to ATF15XX Family (1502AS/1504AS/1508AS)</b></small></font></small><br>
+<br>
+<small><font size="4"><small><b>How to reduce Power consumption?</b></small></font></small>
+</p>
+<ul style="font-family: Verdana; text-align: justify;"><li>In order to reduce power consumption, use "L/Z" devices.</li><li>Disable the ITD on the global clock pins (GCLK[1:3]). If any of the
+GCLK[1:3] pins go to the universal interconnect matrix(UIM), the ITD
+circuitry is enabled. The ITD feature allows the user to save power by
+controlling whether the device will wake up on each clock edge even if
+no inputs are transitioning. When the feature is disabled, the devices
+will not wake up on each transition of the selected pin clock input
+thus conserving power.</li><li>Turn on when applicable the reduced power option (mc_power). This
+will put all Macrocells into the reduced power mode. <span style="font-style: italic;">Note: There is a speed penalty when using this option.</span></li><li>Enable Pin-Keeper circuits (-pin_keep).</li><li>Set Slew option to slow and thereby reduce dynamic Icc (-slew slow).</li><li>Ensure that in 'L/Z' designs there is a large decoupling capacitor.
+The 'L/Z' device requires a large transient current from Vcc when
+waking-up the device from standby to active mode. This transient
+current can be supplied by using de-coupling capacitors. A 0.22 mF
+capacitor is recommended for typical applications. You may also refer
+to the applications note, "Selecting de-coupling capacitors for Atmel
+PLD's", available on our website.</li><li>Use the Power_reset option to put the device into the large
+hysteresis mode. This reduces the Standby Icc by nearly 1 mA.<br></li></ul><p style="font-family: Verdana;">
+<small><font size="4"><small><b>Pin-Keeper Issues</b></small></font></small></p><ul style="font-family: Verdana; text-align: justify;"><li>All members of the ATF15xx Product family have active
+Pin Keeper circuits. Ensure that I/O or input pull-up/pull-down
+resistors do not contend with Pin Keeper circuits. Pin Keeper circuits
+have a 40mA drive. These circuits ensure that a signal holds it's
+previous state after the pin has been tristated.</li><li>Problem can occur when you have 100Kohm pull-up or 30Kohm pull-down
+resistors on the I/O pins. These resistors will contend with the pin
+keeper circuits. If a design uses pull-up on the inputs or outputs of
+an ATF1508AS, a 10Kohm is recommended. For pull-down, a 5Kohm resistor is
+recommended.</li><li>POF2JED automatically disables Pin-Keeper circuits for ATF15xx family
+of devices (by default).<br>
+</li></ul>
+
+<p style="font-family: Verdana;"><small><font size="4"><small><b>Power
+on Reset Issue</b></small></font></small></p><ul style="font-family: Verdana; text-align: justify;"><li>Use the -Power_Reset feature if you are unsure about
+power regulation on circuit board or if the Vcc/GND pins are noisy.</li><li>When you use one of the power-down pins (PD1 or PD2) to power down
+the device, the Power_Reset option must be turned ON. This puts the
+device in Dual point Reset mode and ensures that the device is not
+reset unless the Vcc is turned off (drops below 0.7 V).</li></ul>
+
+
+<p style="font-family: Verdana;"><small><font size="4"><small><b>JTAG
+Conversion Issues</b></small></font></small></p><p style="font-family: Verdana; text-align: justify;">When converting from a 7128S or any 7000 series part with JTAG
+capability, the POF2JED will automatically enable JTAG In-System
+Programming (ISP) mode of the ATF15xx ISP device. Refer to the (.TXT)
+file generated by the POF2JED converter to determine if the JTAG_ON bit
+is set. If it is set, then the device can be re-programmed through ISP.
+Otherwise it cannot and you will need to manually enable it by setting
+the JTAG ON option in the POF2JED converter. The translator will check
+if the design is using the JTAG port pins. If it is, an error will be
+generated. The ATF15xx ISP device can still be programmed once in the ISP
+mode. However, it will have to be re-programmed on an external
+programmer.</p><p style="font-family: Verdana; text-align: justify;">The ATF15xx ISP device also has an optional feature to enable the
+pull-ups for the JTAG pins TDI and TMS (-TMS_pullup and -TDI_pullup).
+If these internal pull-ups are enabled, then no external pull-ups are
+needed for these JTAG pins.
+<br></p><p style="font-family: Verdana;"><small><font size="4"><small><b>Low Voltage Device Support (ATF15xxASV)</b></small></font></small></p><div style="text-align: justify; font-family: Verdana;">When the ATF15xxASV device option is specified, POF2JED will still create the
+same JEDEC file as it did for the 5V parts but the (.TXT) file
+documenting the conversion will show an ATF15xxASV part. It will also show up
+on the screen when the customer runs the POF2JED conversion. Further,
+the Power_reset option is automatically set which enables Large
+Hysteresis.<br></div><p style="font-family: Verdana;">
+<br>
+</p>
+<br>
+</blockquote>
+</body></html>

@@ -1,0 +1,25 @@
+Microchip Pof2jed  Version 4.45.1 Mar 13 2018
+Copyright 2018 Microchip. All Rights Reserved.
+
+  EPM3128ATC100-10 --> 1508asTQFP100
+Input file                : D:\SVN\turbofmpro\trunk\cpld\TurboFMpro.pof
+Output file               : D:\SVN\turbofmpro\trunk\cpld\atmel\TurboFMpro.jed
+Conversion Report file    : D:\SVN\turbofmpro\trunk\cpld\atmel\TurboFMpro.txt
+
+Conversion is completed
+
+   Powerdown :		OFF
+   Security Bit :	AUTO
+   Slew Rate :		SLOW
+   PinClk :		OFF
+   Race Coverage :	ON
+   Pin Keeper :		OFF
+   Macrocell Low Power:	AUTO
+   Power Reset :	ONCE
+   ITD on GCLK1 :	ON
+   ITD on GCLK2 :	ON
+   ITD on GCLK3 :	ON
+   Open Collector :	AUTO
+   JTAG mode :		AUTO
+   TDI Pullup :		OFF
+   TMS Pullup :		OFF
