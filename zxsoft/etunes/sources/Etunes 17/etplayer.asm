@@ -249,10 +249,6 @@ sub_0_815C:
 sub_0_8164:
 		sla	c
 		ld	b,0
-		jr	nc, loc_0_816B
-		inc	b
-
-loc_0_816B:
 		add	hl,bc
 
 sub_0_8169:
@@ -571,7 +567,7 @@ EFrequency_ch4:	db 	0                               ;+0Ch - Frequency of tone 4
 		db    	0                              	;+0Fh - XXXX
 EOctave_ch0:	db 	0                               ;+10h - Octave 1 and 0
 EOctave_ch2:	db 	0                               ;+11h - Octave 3 and 2
-EOctave_ch4:	db	0                               ;+12h - Octave 5 and 4
+		db	0                               ;+12h - Octave 5 and 4
 		db    	0                               ;+13h - XXXX
 EFrequency_en:	db 	0                               ;+14h - Frequency enable
 		db	0                               ;+15h - Noise enable

@@ -1,0 +1,570 @@
+;--------------------------------------------------------------------
+; Описание: Программа проигрывания модулей E-Tracker
+; поддержка в железе: ZXM-SoundCard
+; Автор порта: Тарасов М.Н.(Mick),2010
+;--------------------------------------------------------------------
+		DEVICE ZXSPECTRUM128
+
+		.org 	6000h
+
+;-------------------------------------------------------------------
+; описание: Точка входа в программу после передачи управления из ОС
+;---------------------------------------------------------------------
+ETunes_Start:		
+		xor	a               		;бордер в черный цвет
+		out	(0feh),a	
+		ld	(ETunes_count_music),a		;счетчик номера музыки
+
+		ld	hl,4000h
+		ld	de,4001h
+		ld	bc,1b00h
+		ld	(hl),c
+		ldir
+		
+		ld	hl,4000h			;грузим экран
+		ld	de,(5CF4h)
+		ld	bc,1B05h
+		call	3d13h
+		call	Str_init_load
+		ei
+ETunes_loading:
+		halt
+		ld	b,0
+ETunes_wait:
+		djnz	ETunes_wait			
+		call    Str_move_string
+		call	Str_play
+		jr	c,ETunes_load
+		jr	nc,ETunes_loading	
+ETunes_load:
+		di                                      ;на всякий пожарный запретим прерывания
+		ld	a,10h 				;установим начальную страницу памяти
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим музыкальный пак 1.
+		ld	de,(5CF4h)
+		ld	bc,3905h
+		call	3d13h
+
+		ld	a,11h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим музыкальный пак 2.
+		ld	de,(5CF4h)
+		ld	bc,3E05h
+		call	3d13h
+
+		ld	a,13h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим музыкальный пак 3.
+		ld	de,(5CF4h)
+		ld	bc,3905h
+		call	3d13h
+
+		ld	a,14h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим музыкальный пак 4.
+		ld	de,(5CF4h)
+		ld	bc,3A05h
+		call	3d13h
+
+		ld	a,16h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим музыкальный пак 5.
+		ld	de,(5CF4h)
+		ld	bc,0C05h
+		call	3d13h
+
+		call	ETunes_memory_detect
+		jp	z,ETunes_skip_animation
+		ld	a,90h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 0.
+		ld	de,(5CF4h)
+		ld	bc,3E05h
+		call	3d13h
+
+		ld	a,91h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 1.
+		ld	de,(5CF4h)
+		ld	bc,3D05h
+		call	3d13h
+
+		ld	a,92h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 2.
+		ld	de,(5CF4h)
+		ld	bc,3D05h
+		call	3d13h
+
+		ld	a,93h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 3
+		ld	de,(5CF4h)
+		ld	bc,3D05h
+		call	3d13h
+
+		ld	a,94h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 4.
+		ld	de,(5CF4h)
+		ld	bc,3E05h
+		call	3d13h
+
+		ld	a,95h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 5.
+		ld	de,(5CF4h)
+		ld	bc,3D05h
+		call	3d13h
+
+		ld	a,96h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 6
+		ld	de,(5CF4h)
+		ld	bc,3D05h
+		call	3d13h
+
+		ld	a,97h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 7.
+		ld	de,(5CF4h)
+		ld	bc,3D05h
+		call	3d13h
+
+		ld	a,17h 
+		ld	bc,7ffdh
+		out	(c),a
+		ld	hl,0C000h			;грузим данные анализатора 8.
+		ld	de,(5CF4h)
+		ld	bc,0B05h
+		call	3d13h
+
+ETunes_skip_animation:
+		ld	a,10h 
+		ld	(ETunes_page_memory),a
+		ld	bc,7ffdh
+		out	(c),a
+
+		ld	sp,5fffh
+		call	Str_init			;инициализация бегущей строки
+		call	Analyzer_init
+		ld	a,1
+		ld	(ETunes_number_music),a
+		call	ETunes_view_number
+		call	ETunes_time_init
+		ld	hl,0C000h
+		ld	(EPlayer_Init+1),hl            ;адрес музыкального произведения
+		ld	bc,0FFFDh                       ;разрешим работу SAA1099
+		ld	a,0f6h
+		out	(c),a
+		call	EPlayer_Init			;инициализация проигрывающего модуля
+
+		ld	hl,0fe00h                       ;создаем таблицу прерывания для im 2
+		ld	de,0fe01h
+		ld	bc,0100h
+		ld	(hl),0fdh
+		ldir
+		ld	a,0c3h                          ;установим вектор прерывания
+		ld	(0fdfdh),a
+		ld	hl,Interrupt_handle
+		ld	(0fdfeh),hl
+		di
+		ld	a,0feh                          ;окончание установки прерывания
+		ld	i,a
+		im	2
+		ei
+ETunes_key:		
+		xor	a
+                ld	(ETunes_key_press),a
+ETunes_loop:		
+		halt
+		call    Str_move_string
+		call	Str_play
+
+		ld	a,7fh				;ожидаем пробел - переход к следующей композиции
+		in	a,(0feh)
+		rra	
+		jr	c,ETunes_key
+
+		ld	a,0FEh
+		in	a,(0FEh)
+		rra	    
+		jr	nc,ETunes_exit
+
+		ld	a,(ETunes_key_press)
+		and	a
+		jr	nz,ETunes_loop
+
+		di	
+		inc	a
+                ld	(ETunes_key_press),a
+		ld	a,(ETunes_page_memory)		;загрузим номер страницы памяти
+		ld	bc,7ffdh
+		out	(c),a
+		call	EPlayer_Init			;глушим работу проигрывающего модуля
+		ld	bc,0FFFDh                       ;запрещаем работу SAA1099
+		ld	a,0feh
+		out	(c),a
+		ld	a,(ETunes_count_music)
+		inc	a
+		cp	30
+		jr	c,ETunes_next_music
+		xor	a
+
+ETunes_next_music:
+		ld	(ETunes_count_music),a
+		ld	l,a
+		ld	e,a
+		ld	h,0
+		ld	d,h
+		add	hl,hl
+		add	hl,de
+		ld	de,ETunes_tabl_music
+		add	hl,de
+		ld	a,(hl)				;номер страницы памяти
+		ld	(ETunes_page_memory),a
+		inc	hl
+		ld	a,(hl)                          
+		inc	hl
+		ld	h,(hl)
+		ld	l,a
+		ld	a,(ETunes_page_memory)		;загрузим номер страницы памяти
+		ld	bc,7ffdh
+		out	(c),a
+		ld	(EPlayer_Init+1),hl            ;адрес музыкального произведения
+		ld	bc,0FFFDh                       ;разрешим работу SAA1099
+		ld	a,0f6h
+		out	(c),a
+		call	EPlayer_Init			;инициализируем проигрыватель
+		ld	a,10h
+		ld	bc,7ffdh
+		out	(c),a
+
+		ld	a,(ETunes_number_music)
+		inc	a
+		ld	c,a
+		and	0Fh
+		cp	10
+		jr	c,ETunes_number_correct
+		ld	a,6
+		add	c
+		ld	c,a
+
+ETunes_number_correct:
+		ld	a,c
+		ld	(ETunes_number_music),a
+		cp	31h
+		jr	c,ETunes_number_valid
+		ld	a,1
+
+ETunes_number_valid:
+		ld	(ETunes_number_music),a
+		call	ETunes_view_number
+		call	ETunes_time_init
+
+		ei
+		jp      ETunes_loop
+
+ETunes_exit:		
+		di	
+		call	EPlayer_Init			;глушим работу проигрывающего модуля
+		ld	bc,0FFFDh                       ;запрещаем работу SAA1099
+		ld	a,0feh
+		out	(c),a
+		ld	hl,0	
+		push	hl
+      		jp  	3d2fh				;выход в TR-DOS
+
+ETunes_time_init:
+		xor	a
+                ld	(ETunes_time_int),a
+		ld	(ETunes_time_count),a		
+		ld	(ETunes_time_minute),a
+		jr	ETunes_time_draw
+
+ETunes_time_view:
+                ld	a,(ETunes_time_int)
+		inc	a
+                ld	(ETunes_time_int),a
+		cp	50
+		ret	c
+		xor	a
+                ld	(ETunes_time_int),a
+                ld	a,(ETunes_time_count)
+		inc	a
+		ld	c,a
+		and	0Fh
+		cp	10
+		jr	c,ETunes_time_next
+		ld	a,6
+		add	c
+		ld	c,a
+ETunes_time_next:
+		ld	a,c
+		ld	(ETunes_time_count),a		
+		cp	60h
+		jr	c,ETunes_time_draw
+		xor	a
+		ld	(ETunes_time_count),a		
+		ld	a,(ETunes_time_minute)
+		inc	a
+		ld	(ETunes_time_minute),a
+		cp	10
+		jr	c,ETunes_time_draw
+		xor	a
+		ld	(ETunes_time_minute),a
+ETunes_time_draw:
+		ld	a,(ETunes_time_minute)
+		ld	hl,40DCh
+		and	0Fh
+		call 	ETunes_view_symbol
+		ld	a,(ETunes_time_count)
+		ld	c,a
+		and	0F0h
+		rrca
+		rrca
+		rrca
+		rrca
+		ld	hl,40DEh
+		call	ETunes_view_symbol
+		ld	a,c
+		and	0Fh
+		ld	hl,40DFh
+		jr	ETunes_view_symbol
+
+ 
+ETunes_view_number:
+		ld	c,a
+		and	0F0h
+		rrca
+		rrca
+		rrca
+		rrca
+		ld	hl,40C6h
+		call	ETunes_view_symbol
+		ld	a,c
+		and	0Fh
+		ld	hl,40C7h
+
+ETunes_view_symbol:
+		push	hl
+		ld	h,0
+		ld	l,a
+		add	hl,hl
+		add	hl,hl
+		add	hl,hl
+		ld	de,ETunes_table_symbol
+	        add	hl,de	
+		ex	de,hl
+		pop	hl
+		ld	b,8
+
+ETunes_view_loop:
+		ld	a,(de)
+		ld	(hl),a
+		inc	de		
+		inc	h
+		ld	a,h
+		and	7
+		jr	nz,ETunes_next_line
+		ld	a,l
+		add	a,20h
+		ld	l,a
+		jr	c,ETunes_next_line
+		ld	a,h
+		sub	8
+		ld	h,a
+ETunes_next_line:
+		djnz	ETunes_view_loop
+		ret	
+
+ETunes_memory_detect:
+		ld	bc,7ffdh
+		ld 	a,10h
+		out	(c),a
+		ld	hl,0C000h
+		ld	e,(hl)	
+		ld	a,90h
+		out	(c),a
+		ld	a,(hl)
+		cp	e
+		ld	a,1
+		jr	nz,ETunes_memory_flg
+		xor	a
+ETunes_memory_flg:
+		ld	(ETunes_memory_ok),a
+		and	a
+		ret
+
+ETunes_tabl_music:
+		db	10h   				; 1 музыкальное произведение
+		dw	0C000h
+		db	10h   				; 2 музыкальное произведение
+		dw	0CDA0h
+		db	10h   				; 3 музыкальное произведение
+		dw	0D510h
+		db	10h   				; 4 музыкальное произведение
+		dw	0DB60h
+		db	10h   				; 5 музыкальное произведение
+		dw	0DDB0h
+		db	10h   				; 6 музыкальное произведение
+		dw	0E740h
+		db	10h   				; 7 музыкальное произведение
+		dw	0EFA0h
+		db	10h   				; 8 музыкальное произведение
+		dw	0F500h
+
+		db	11h   				; 9 музыкальное произведение
+		dw	0C000h
+		db	11h   				; 10 музыкальное произведение
+		dw	0C560h
+		db	11h   				; 11 музыкальное произведение
+		dw	0CB20h
+		db	11h   				; 12 музыкальное произведение
+		dw	0CED0h
+		db	11h   				; 13 музыкальное произведение
+		dw	0D520h
+		db	11h   				; 14 музыкальное произведение
+		dw	0D750h
+		db	11h   				; 15 музыкальное произведение
+		dw	0E170h
+		db	11h   				; 16 музыкальное произведение
+		dw	0E8B0h
+		db	11h   				; 17 музыкальное произведение
+		dw	0EE60h
+		db	11h   				; 18 музыкальное произведение
+		dw	0F100h
+
+		db	13h   				; 19 музыкальное произведение
+		dw	0C000h
+		db	13h   				; 20 музыкальное произведение
+		dw	0CA60h
+		db	13h   				; 21 музыкальное произведение
+		dw	0D640h
+		db	13h   				; 22 музыкальное произведение
+		dw	0E280h
+		db	13h   				; 23 музыкальное произведение
+		dw	0E760h
+
+		db	14h   				; 24 музыкальное произведение
+		dw	0C000h
+		db	14h   				; 25 музыкальное произведение
+		dw	0C820h
+		db	14h   				; 26 музыкальное произведение
+		dw	0CA90h
+		db	14h   				; 27 музыкальное произведение
+		dw	0D750h
+		db	14h   				; 28 музыкальное произведение
+		dw	0DAD0h
+		db	14h   				; 29 музыкальное произведение
+		dw	0EA50h
+
+		db	16h   				; 30 музыкальное произведение
+		dw	0C000h
+
+ETunes_table_symbol:
+  		db 	0,3Ch,66h,6Eh,76h,66h,3Ch,0
+  		db 	0,18h,38h,18h,18h,18h,7Eh,0
+  		db 	0,3Ch,66h,0Ch,18h,30h,7Eh,0
+  		db 	0,7Eh,0Ch,18h,0Ch,66h,3Ch,0
+  		db 	0,0Ch,1Ch,3Ch,6Ch,7Eh,0Ch,0
+  		db 	0,7Eh,60h,7Ch,06h,66h,3Ch,0
+  		db 	0,3Ch,60h,7Ch,66h,66h,3Ch,0
+  		db 	0,7Eh,06h,0Ch,18h,30h,30h,0
+  		db 	0,3Ch,66h,3Ch,66h,66h,3Ch,0
+		db 	0,3Ch,66h,3Eh,06h,0Ch,38h,0
+
+ETunes_page_memory:
+		db	0		
+ETunes_count_music:
+		db	0
+ETunes_number_music:
+		db	0
+ETunes_key_press:
+		db	0
+ETunes_time_int:
+		db	0
+ETunes_time_count:
+		db	0		
+ETunes_time_minute:
+		db	0
+ETunes_memory_ok:
+		db	0
+
+Interrupt_handle:
+		push	hl	
+		push	bc	
+		push	de
+		push	af	
+
+		call 	Analyzer_update
+		call    Analyzer_draw_flash
+		call	ETunes_time_view
+
+		ld	a,(ETunes_memory_ok)
+		and	a
+		call	nz,Analyzer_view
+
+		ld	a,(ETunes_page_memory)
+		ld	bc,7ffdh
+		out	(c),a
+		call	EPlayer_Play
+		ld	a,10h
+		ld	bc,7ffdh
+		out	(c),a
+
+		pop	af
+		pop	de
+		pop	bc
+		pop	hl
+		ei
+		ret
+
+
+		.include  analyzer.asm
+		.include  etplayer.asm
+		.include  string.asm
+Etunes_end:
+		.savebin "etunes.bin",ETunes_Start, Etunes_end - ETunes_Start
+
+		.include  adata_000.asm
+		.savebin "adt000.bin",Analyzer_phase_0000, Analyzer_end_000 - Analyzer_phase_0000
+
+		.include  adata_001.asm
+		.savebin "adt001.bin",Analyzer_phase_1501, Analyzer_end_001 - Analyzer_phase_1501
+
+		.include  adata_002.asm
+		.savebin "adt002.bin",Analyzer_phase_3301, Analyzer_end_002 - Analyzer_phase_3301
+
+		.include  adata_003.asm
+		.savebin "adt003.bin",Analyzer_phase_5101, Analyzer_end_003 - Analyzer_phase_5101
+
+		.include  adata_004.asm
+		.savebin "adt004.bin",Analyzer_phase_6601, Analyzer_end_004 - Analyzer_phase_6601
+
+		.include  adata_005.asm
+		.savebin "adt005.bin",Analyzer_phase_8401, Analyzer_end_005 - Analyzer_phase_8401
+
+		.include  adata_006.asm
+		.savebin "adt006.bin",Analyzer_phase_A201, Analyzer_end_006 - Analyzer_phase_A201
+
+		.include  adata_007.asm
+		.savebin "adt007.bin",Analyzer_phase_C001, Analyzer_end_007 - Analyzer_phase_C001
+
+		.include  adata_008.asm
+		.savebin "adt008.bin",Analyzer_phase_D501, Analyzer_end_008 - Analyzer_phase_D501
+		.end
+
